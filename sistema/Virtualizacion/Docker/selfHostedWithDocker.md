@@ -19,3 +19,4 @@
 * https://hub.docker.com/u/kasmweb => Contendores docker de escritorios linux
   * https://www.kasmweb.com/docs/latest/guide/custom_images.html
   * https://github.com/kasmtech/workspaces-images
+* https://docs.techdox.nz/ => Muchas ideas para hacer con docker
