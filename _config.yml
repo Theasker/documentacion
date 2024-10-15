@@ -1,4 +1,5 @@
 title: "Documentación"
 description: "Documentación generada automáticamente a partir de archivos Markdown"
+highlighter: rouge
 theme: minima
   skin: dark
