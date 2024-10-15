@@ -1,0 +1,70 @@
+name: Deploy MkDocs to GitHub Pages
+
+# Ejecutar el workflow cuando haya un push en la rama master
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Paso 1: Clonar el repositorio en la rama master
+    - name: Checkout repository
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git clone https://github.com/${{ github.repository }} docs
+        cp docs/mkdocs.yml .  # Mover el archivo mkdocs.yml a la raíz
+
+    # Paso 1.2: Creación del fecha del deploy
+    - name: Deploy date
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Usar el token generado por GitHub Actions
+      run: |
+        cd docs
+        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+        date > date.md
+        git add date.md
+        git commit -m "Actualización de la fecha"
+        git push origin master --force
+        cd ..
+    # Paso 2: Instalar Python y MkDocs
+    - name: Set up Python and Install MkDocs
+      run: |
+        sudo apt-get update
+        sudo apt-get install python3 python3-pip -y
+        pip3 install mkdocs
+        # pip3 install mkdocs-material  # Si usas el tema Material para MkDocs
+        pip3 install mkdocs-windmill-dark
+
+    # Paso 3: Build la documentación con MkDocs
+    - name: Build markdown TOC
+      run: |
+        cd docs
+        python createTOC.py
+        git add -A
+        git commit -m "Create automatic markdown TOC"
+        git push
+        cd ..
+
+    # Paso 3: Build la documentación con MkDocs
+    - name: Build the documentation
+      run: |
+        mkdocs build
+        ls -la
+
+    # Paso 4: Crear la rama gh-pages y copiar los archivos desde el directorio temporal
+    - name: Deploy to GitHub Pages
+      run: |
+        cd docs
+        git clean -fd
+        git checkout gh-pages
+        ls -la
+        ls ..
+        cp -r ../site/* .
+        git add .
+        git commit -m "Deploy MkDocs to GitHub Pages"
+        git push --force https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} gh-pages

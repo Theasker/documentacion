@@ -1,1 +1,0 @@
-https://github.com/Theasker/documentacion.wiki.git

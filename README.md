@@ -1,3 +1,2 @@
-# documentation
-Documentación, trucos y más sobre programación y sistemas.
-
+# Estructura de Directorios
+* [Blender](./multimedia/Blender/blender.md)

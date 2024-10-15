@@ -6,6 +6,7 @@
   - [Creación de imagen virtual](#creación-de-imagen-virtual)
   - [Ejecución de máquina](#ejecución-de-máquina)
   - [Activar red](#activar-red)
+  - [Ejemplos de comandos](#ejemplos-de-comandos)
   - [Bibliografía](#bibliografía)
 
 
@@ -58,8 +59,6 @@ La activamos y le decimos que se autoarranque cuando iniciamos una máquina
 $ virsh --connect=qemu:///system net-autostart default
  Network default marked as autostarted
 ```
-
-
 
 ## Creación de imagen virtual
 ```bash
@@ -121,6 +120,13 @@ La activamos
 ```bash
 $ sudo virsh net-start default
 La red default se ha iniciado
+```
+
+## Ejemplos de comandos
+
+Comando de instalación de debian:
+```bash
+qemu_system-x86_64 --enable-kvm -cpu qemu64 -M q35 -m 8G -drive file=disco.qcow2,if=virtio,media=disk,cache=unsafe -drive file=/home/....../debian.iso,media=cdrom -vga virtio -boot menu=on
 ```
 
 
