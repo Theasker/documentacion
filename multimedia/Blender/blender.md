@@ -471,6 +471,7 @@ Se suelen conectar los mismos colores de nodos
  * **Hacer huecos en cilindros o esferas** => https://www.youtube.com/watch?v=S6_MSPPiGZY
  * **Foro Blender Hoy** => https://blender.community/c/hoy/?sorting=hot
  * **Renderizar con Google Colab** => https://zao3d.com/tutorial/renderizar-con-blender-en-los-servidores-de-google-con-colab/
+ * **Fotos Alphas para poder usar en Blender**: => https://pixologic.com/zbrush/downloadcenter/alpha/
 
 #### Comercio
  * **Vender modelos**: => https://www.youtube.com/watch?v=FtEQTWPYlJw

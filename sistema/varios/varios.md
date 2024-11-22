@@ -1,0 +1,1 @@
+* **Mostrar y controlar el movil desde el ordenador**: https://github.com/Genymobile/scrcpy

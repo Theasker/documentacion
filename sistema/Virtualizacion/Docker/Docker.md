@@ -81,6 +81,14 @@ Otra forma de entrar en un container en ejecución sería con 'docker attach <ha
 
  * **--sig-proxy=true**: Lo que hace es decirle que todo lo que ejecutemos en la consola que abrimos le mande las señales a la consola principal, por lo que si hicieramos un 'Crtl+c' mataríamos el comando principal con el que ejecutamos el contenedor (docker ... bash -c "apache2ctl -D FOREGROUND")
 
+Eliminar un contenedor
+
+	docker rm fce2354f3
+
+Eliminar todos los contenedores
+
+	docker container prune
+
 Copiar un fichero al container:
 
 	docker cp temp.txt web:/tmp

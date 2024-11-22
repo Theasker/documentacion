@@ -23,3 +23,4 @@ yt-dlp --print filename --write-auto-subs -o "%(upload_date>%Y-%m-%d)s %(channel
 
 ## Varios
  * **PureRef**: Aplicación gratuíta para poner y administrar imágenes de referencia y tenerlas visualizadas => https://www.pureref.com/
+ * **IA gratuita para generación de imágenes con Google Colab** => https://github.com/lllyasviel/Fooocus?tab=readme-ov-file
