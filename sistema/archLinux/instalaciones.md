@@ -150,7 +150,8 @@ alias dotdrop='/mnt/datos1/backup/dotfiles/dotdrop/dotdrop.sh'
 ```
 ### /etc/fstab
 ```bash
-sudo pacman -S sshfs genfstab
+# genfstab
+sudo pacman -S arch-install-scripts
 sudo mkdir /mnt/datos1 /mnt/datos2 /mnt/datos3 /mnt/raspberry
 sudo chown theasker:theasker /mnt/*
 sudo chmod 777 /mnt/*
@@ -227,7 +228,7 @@ Configurar en la url `http://localhost:32400/web/`
 
 ## Varios
 ```bash
-sudo pacman -S smplayeryay -Syu nvidia-470xx-dkms nvidia-470xx-utils nvidia-470xx-settings
+sudo pacman -S smplayer && yay -Syu nvidia-470xx-dkms nvidia-470xx-utils nvidia-470xx-settings
 ```
 ```bash
 sudo pacman -S xfce4-cpugraph-plugin xfce4-weather-plugin

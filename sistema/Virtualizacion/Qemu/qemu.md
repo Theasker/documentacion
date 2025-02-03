@@ -7,6 +7,7 @@
   - [Ejecución de máquina](#ejecución-de-máquina)
   - [Activar red](#activar-red)
   - [Ejemplos de comandos](#ejemplos-de-comandos)
+  - [Activar aceleración gráfica con NVIDIA](#activar-aceleración-gráfica-con-nvidia)
   - [Bibliografía](#bibliografía)
 
 
@@ -129,6 +130,24 @@ Comando de instalación de debian:
 qemu_system-x86_64 --enable-kvm -cpu qemu64 -M q35 -m 8G -drive file=disco.qcow2,if=virtio,media=disk,cache=unsafe -drive file=/home/....../debian.iso,media=cdrom -vga virtio -boot menu=on
 ```
 
+## Activar aceleración gráfica con NVIDIA
+> https://www.reddit.com/r/archlinux/comments/18jkln3/libvirt_virtmanager_nvidia_3d_acceleration_black/?tl=es-es
+> https://nyblnet.blogspot.com/2020/11/virgl-3d-acceleration-on-kvm-with.html
+Modificar el apartado `<graphics>` y `<video>`
+```xml
+<graphics type="spice">
+  <listen type="none"/>
+</graphics>
+<graphics type="egl-headless">
+  <gl rendernode="/dev/dri/renderD128"/>
+</graphics>
+<video>
+  <model type="virtio" heads="1" primary="yes">
+    <acceleration accel3d="yes"/>
+  </model>
+  <address type="pci" domain="0x0000" bus="0x00" slot="0x01" function="0x0"/>
+</video>
+```
 
 ## Bibliografía
  * Qemu | Tutorial fácil (Locos por Linux) => https://www.youtube.com/watch?v=ISvdxtW-Cls
@@ -139,3 +158,4 @@ qemu_system-x86_64 --enable-kvm -cpu qemu64 -M q35 -m 8G -drive file=disco.qcow2
  * https://www.youtube.com/watch?v=NGN9p4pulFM&t=1855s
  * https://h4ckseed.wordpress.com/2021/07/29/administrando-virtualizacion-kvm-con-virsh/
  * https://nb.fedorapeople.org/cvsfedora/web/html/docs/virtualization-guide/f12/es-ES/html/part-Virtualization_Guide-Virtualization_Reference_Guide.html
+ * **Aceleración Gráfica con NVIDIA y libvirt**: https://nyblnet.blogspot.com/2020/11/virgl-3d-acceleration-on-kvm-with.html
