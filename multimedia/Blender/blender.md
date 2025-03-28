@@ -399,6 +399,7 @@ Se suelen conectar los mismos colores de nodos
  * **Cuerda en 90 seg.** => https://www.youtube.com/watch?v=Aajp72RBWHw
 
 ### Materiales / nodos
+ * **Materialize**: Para crear materiales PBR => https://boundingboxsoftware.com/materialize/
  * **Masterclass: Cómo usar los nodos de Blender (¡desde cero!)** => https://www.youtube.com/watch?v=vOFLhLtBlFE
  * **Guía materiales y texturas** => https://www.youtube.com/watch?v=7SdhsCpNuYY
  * **Metal oxidado** => https://www.youtube.com/watch?app=desktop&v=lB01ncko99A
