@@ -449,6 +449,7 @@ Se suelen conectar los mismos colores de nodos
  * https://quixel.com/megascans/home/ => Texturas
  * https://ambientcg.com/list => Texturas y HDRIs
  * **fSpy**: https://fspy.io/ => Pasar una foto a blender con la orientación y perspectiva correcta
+ * Imágenes: https://www.pexels.com/es-es/
 
 ### Enlaces de interés
  * Páginas de IOR de Materiales:
