@@ -45,3 +45,5 @@ ssh -L 43573:localhost:43573 poder
 ## Bibliografía
 * Minikube — the mini-me of Kubernetes development on OCI: https://paulguerin.medium.com/minikube-the-mini-me-of-kubernetes-development-on-oci-acd8de9bb989
 * Acceder al dashboard de minikube desde un host remoto: https://moreluz-ia.com/kubernetes/minikube/que-es-dashboard/
+* Playgrounds
+  * https://killercoda.com/
