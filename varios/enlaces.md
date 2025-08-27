@@ -6,6 +6,8 @@
  * 200 Gb de almacenamiento en la nube gratis => https://www.blomp.com/
  * https://visualping.io/ => Monitorización de cambios de una web (scrapping)
 
+### Bases de datos
+ * https://supabase.com => Base de datos POSTGRESS con servicio gratuito.
 ### Dynamic DNS
  * https://dynv6.com/
 

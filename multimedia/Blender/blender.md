@@ -450,6 +450,17 @@ Se suelen conectar los mismos colores de nodos
  * https://ambientcg.com/list => Texturas y HDRIs
  * **fSpy**: https://fspy.io/ => Pasar una foto a blender con la orientación y perspectiva correcta
  * Imágenes: https://www.pexels.com/es-es/
+ * **kitbash3d**: https://kitbash3d.com
+ * https://superhivemarket.com/
+ * https://www.cgtrader.com/
+ * https://free3d.com/
+ * https://www.fab.com/
+ * https://quixel.com/megascans/home
+ * https://polyhaven.com/
+ * https://www.sharetextures.com/
+ * https://www.cgbookcase.com/
+ * https://superhivemarket.com/pickup/7p85yk (assets de plantas comprado por 1€2025060299001191)
+ * modelos de personas gratis => https://renderpeople.com/free-3d-people/
 
 ### Enlaces de interés
  * Páginas de IOR de Materiales:
