@@ -160,9 +160,14 @@ kubectl run apache --image=httpd --port=8080
 ## Bibliografía
 * Minikube — the mini-me of Kubernetes development on OCI: https://paulguerin.medium.com/minikube-the-mini-me-of-kubernetes-development-on-oci-acd8de9bb989
 * Acceder al dashboard de minikube desde un host remoto: https://moreluz-ia.com/kubernetes/minikube/que-es-dashboard/
+<<<<<<< HEAD
 * Instalar kubectl: https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
 
 ### Cursos
 * https://www.youtube.com/playlist?list=PLDbrnXa6SAzUaNBcudoGJW7juNouB30KR (dfbastidas)
 * https://www.youtube.com/watch?v=gvqpZkdK4DU&t=1665s => Curso de 3 horas de "La tecnología avanza"
 * 
+=======
+* Playgrounds
+  * https://killercoda.com/
+>>>>>>> 26df907fbb4932df755fdc471d53b1ac90f370ee
