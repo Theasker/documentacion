@@ -1,6 +1,8 @@
 # Copias de seguridad con Restic
 
+Vamos a configurar todo para hacer copias de seguridad desde
 
+export RESTIC_REPOSITORY="sftp:ubuntu@instancia:/home/ubuntu/temp/restic_repo"
 
 Bibliografía
 ------------
