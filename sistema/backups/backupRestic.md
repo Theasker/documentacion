@@ -1,5 +1,24 @@
 # Copias de seguridad con Restic
 
+- [Copias de seguridad con Restic](#copias-de-seguridad-con-restic)
+	- [Preparando el repositorio](#preparando-el-repositorio)
+	- [Creando copias de seguridad](#creando-copias-de-seguridad)
+		- [Evitar crear snapshots if no cambia nada](#evitar-crear-snapshots-if-no-cambia-nada)
+		- [Probando backups con `Dry run`](#probando-backups-con-dry-run)
+		- [Excluyendo ficheros](#excluyendo-ficheros)
+		- [Incluyendo ficheros](#incluyendo-ficheros)
+		- [Comparando Snapshots](#comparando-snapshots)
+		- [Leer datos desde un comando](#leer-datos-desde-un-comando)
+		- [Etiquetas para los backup](#etiquetas-para-los-backup)
+		- [Requerimientos de espacio](#requerimientos-de-espacio)
+		- [Códigos de estado de salida](#códigos-de-estado-de-salida)
+		- [Variables de entorno](#variables-de-entorno)
+	- [Trabajando con repositorios](#trabajando-con-repositorios)
+		- [Listando las copias](#listando-las-copias)
+		- [Listando ficheros](#listando-ficheros)
+	- [Bibliografía](#bibliografía)
+
+
 ## Preparando el repositorio
 
 Para automatizar las tareas Restic soporta variables de entorno para configurarlas y poder usarlas posteriormente:
@@ -60,7 +79,7 @@ Con la opción `--skip-if-unchanged` no crea el snapshot si no hay ningún cambi
 restic -r /srv/restic-repo --verbose backup ~/work --skip-if-unchanged
 ```
 
-## Probando backups con `Dry run`
+### Probando backups con `Dry run`
 
 Con la opción `--Dry run` / `-n` podemos probar y ver lo que podría suceder al realizar un backup sin escribir nada en el repositorio. Combinado con la opción `--verbose` veremos la lista de cambios
 ```bash
@@ -70,7 +89,7 @@ modified  /archive.tar.gz, saved in 0.140s (25.542 MiB added)
 Would be added to the repository: 25.551 MiB
 ```
 
-## Excluyendo ficheros
+### Excluyendo ficheros
 
 Podemos excluir carpetas y ficheros usando patrones con estas opciones:
 
@@ -123,8 +142,7 @@ character-range:
 	lo '-' hi   matches character c for lo <= c <= hi
 ```
 
-## Incluyendo ficheros
-
+### Incluyendo ficheros
 
 * `--files-from` debe ser el nombre de un archivo de texto que contenga un patrón por línea. (https://pkg.go.dev/path/filepath#Match)
 * `-files-from-verbatim` debe ser el nombre de un archivo de texto que contenga una ruta por línea, por ejemplo, tal y como lo genera GNU find con el indicador -print.
@@ -146,7 +164,7 @@ restic backup --files-from /tmp/files_to_backup /tmp/some_additional_file
 restic backup --files-from /tmp/glob-pattern --files-from-raw /
 ```
 
-## Comparando Snapshots
+### Comparando Snapshots
 
 Miro los snapshots que tengo para localizar los ID que quiero comparar:
 ```
@@ -189,7 +207,7 @@ Tree Blobs:      1 new,     2 removed
 Si sólo quieres comparar subcarpetas `<snapshot>:<subfolder>`
 
 
-## Leer datos desde un comando
+### Leer datos desde un comando
 
 A veces, puede resultar útil guardar directamente la salida de un programa, por ejemplo, `mysqldump`, para poder restaurar posteriormente el SQL. Restic admite este modo de funcionamiento; solo hay que proporcionar la opción `--stdin-from-command` al utilizar la acción `backup` y escribir el comando en lugar de los archivos/directorios. Para evitar que restic interprete los argumentos del comando, asegúrese de añadir -- antes de que comience el comando:
 ```bash
@@ -201,7 +219,7 @@ restic -r /srv/restic-repo backup --stdin-filename production.sql --stdin-from-c
 ```
 Restic utiliza el código de salida del comando para determinar si el comando se ha ejecutado correctamente. Un código de salida distinto de cero del comando hace que restic cancele la copia de seguridad. Esto provoca que restic falle con el código de salida 1. En este caso, no se creará ninguna instantánea.
 
-## Etiquetas para los backup
+### Etiquetas para los backup
 ```bash
 restic -r /srv/restic-repo backup --tag projectX --tag foo --tag bar ~/work
 [...]
@@ -210,11 +228,11 @@ restic -r /srv/restic-repo backup --tag projectX --tag foo --tag bar ~/work
 Las etiquetas se pueden utilizar posteriormente para conservar (u olvidar) instantáneas con el comando `forget`. El comando `tag` se puede utilizar para modificar las etiquetas de una instantánea existente.
 
 
-## Requerimientos de espacio
+### Requerimientos de espacio
 
 Si se queda sin espacio durante una copia de seguridad, habrá algunos datos adicionales en el repositorio, pero la instantánea nunca se creará, ya que solo se escribiría al final (correcto) de la operación de copia de seguridad. Las instantáneas anteriores seguirán estando ahí y seguirán funcionando.
 
-## Códigos de estado de salida
+### Códigos de estado de salida
 
 Restic devuelve un código de estado de salida después de ejecutar el comando de copia de seguridad:
 
@@ -232,7 +250,7 @@ Restic devuelve un código de estado de salida después de ejecutar el comando d
 | 12 | Wrong password (since restic 0.17.1) |
 | 130 | Restic was interrupted using SIGINT or SIGSTOP |
 
-## Variables de entorno
+### Variables de entorno
 
 ```
 RESTIC_REPOSITORY_FILE              Name of file containing the repository location (replaces --repository-file)
@@ -312,8 +330,105 @@ ST_KEY                              Password for keystone v1 authentication
 
 Los programas externos que restic puede ejecutar incluyen rclone (para backends rclone) y ssh (para el backend SFTP). Estos pueden responder a otras variables de entorno y archivos de configuración; consulte sus respectivos manuales.
 
+## Trabajando con repositorios
 
+### Listando las copias
+Para listar las copias usamos:
+```bash
+restic -r /srv/restic-repo snapshots
+enter password for repository:
+ID        Date                 Host    Tags   Directory        Size
+-------------------------------------------------------------------------
+40dc1520  2015-05-08 21:38:30  kasimir        /home/user/work  20.643GiB
+79766175  2015-05-08 21:40:19  kasimir        /home/user/work  20.645GiB
+bdbd3439  2015-05-08 21:45:17  luigi          /home/art        3.141GiB
+590c8fc8  2015-05-08 21:47:38  kazik          /srv             580.200MiB
+9f0bc19e  2015-05-08 21:46:11  luigi          /srv             572.180MiB
+```
+Puedes filtrar el listado por la ruta del directorio:
+```bash
+restic -r /srv/restic-repo snapshots --path="/srv"
+enter password for repository:
+ID        Date                 Host    Tags   Directory  Size
+-------------------------------------------------------------------
+590c8fc8  2015-05-08 21:47:38  kazik          /srv       580.200MiB
+9f0bc19e  2015-05-08 21:46:11  luigi          /srv       572.180MiB
+```
 
+O filtrar por host:
+```bash
+restic -r /srv/restic-repo snapshots --host luigi
+enter password for repository:
+ID        Date                 Host    Tags   Directory  Size
+-------------------------------------------------------------------
+bdbd3439  2015-05-08 21:45:17  luigi          /home/art  3.141GiB
+9f0bc19e  2015-05-08 21:46:11  luigi          /srv       572.180MiB
+Combining filters is also possible.
+```
+
+Además puedes agrupar la salida por los mismos filtros (host, paths, tags):
+```bash
+restic -r /srv/restic-repo snapshots --group-by host
+
+enter password for repository:
+snapshots for (host [kasimir])
+ID        Date                 Host    Tags   Directory        Size
+------------------------------------------------------------------------
+40dc1520  2015-05-08 21:38:30  kasimir        /home/user/work  20.643GiB
+79766175  2015-05-08 21:40:19  kasimir        /home/user/work  20.645GiB
+2 snapshots
+snapshots for (host [luigi])
+ID        Date                 Host    Tags   Directory  Size
+-------------------------------------------------------------------
+bdbd3439  2015-05-08 21:45:17  luigi          /home/art  3.141GiB
+9f0bc19e  2015-05-08 21:46:11  luigi          /srv       572.180MiB
+2 snapshots
+snapshots for (host [kazik])
+ID        Date                 Host    Tags   Directory  Size
+-------------------------------------------------------------------
+590c8fc8  2015-05-08 21:47:38  kazik          /srv       580.200MiB
+1 snapshots
+```
+
+### Listando ficheros
+
+Listamos los ficheros de un snapshot específico:
+```bash
+restic ls 073a90db
+
+snapshot 073a90db of [/home/user/work.txt] filtered by [] at 2024-01-21 16:51:18.474558607 +0100 CET):
+/home
+/home/user
+/home/user/work.txt
+```
+
+Listamos los ficheros del último snapshot:
+```bash
+restic ls --host kasimir latest
+
+snapshot 073a90db of [/home/user/work.txt] filtered by [] at 2024-01-21 16:51:18.474558607 +0100 CET):
+/home
+/home/user
+/home/user/work.txt
+```
+Listamos un directorio específico:
+```bash
+restic ls latest /home
+
+snapshot 073a90db of [/home/user/work.txt] filtered by [/home] at 2024-01-21 16:51:18.474558607 +0100 CET):
+/home
+/home/user
+```
+
+Y el directorio de forma recursiva:
+```bash
+restic ls --recursive latest /home
+
+snapshot 073a90db of [/home/user/work.txt] filtered by [/home] at 2024-01-21 16:51:18.474558607 +0100 CET):
+/home
+/home/user
+/home/user/work.txt
+```
 
 
 
