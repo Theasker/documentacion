@@ -1,0 +1,27 @@
+name: Publicar Documentacion MkDocs
+
+on:
+  push:
+    branches:
+      - master # En base al repo original de Theasker, la rama default es master.
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el código
+        uses: actions/checkout@v4
+        
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+          
+      - name: Instalar las dependencias exactas
+        run: pip install -r requirements.txt
+        
+      - name: Ejecutar MkDocs y publicar a "gh-pages"
+        run: mkdocs gh-deploy --force
