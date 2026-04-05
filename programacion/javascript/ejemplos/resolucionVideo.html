@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <SCRIPT LANGUAGE="JavaScript">
+        <!-- Activate Cloaking Device
+        //***************************************************************
+        //
+        //             Determining Screen Resolution III
+        //                   (requires JavaScript1.2)
+        //
+        //        by Tim Wallace   (timothy@essex1.com)
+        //
+        //***************************************************************
+
+        // Used to display the browser name/version if JavaScript1.2 is not supported
+        var browser=navigator.appName + " " + navigator.appVersion;
+
+        // Though set in the JS1.2 code, these variables are declared here to avoid errors in lesser browsers
+        var width=null;
+        var height=null;
+        var right_browser=false;
+
+        // Called by Requirements button
+
+        function aboutScheme(){
+            alert("\nThis example uses screen.height & screen.width to grab the screen resolution.\n\nThese were introduced in JavaScript1.2.");
+        }
+
+        // Called by View Source button - displays text file of source.
+        function viewSource(){
+            alert("\nA text file with source will be loaded to the full window.\n\nUse your browser BACK button to return to the examples.");
+            top.window.location.href="js-wid3.txt";
+        }
+        // Deactivate Cloaking -->
+    </SCRIPT>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width initial-scale=1.0">
+	<title>Keylogger en JQuery</title>
+	<script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+	<script>
+		$(document).ready(function(){
+			$('#cifrada').on('keypress',function(e){
+				var letra = String.fromCharCode(e.which);
+				$('#plano').val($(this).val() + letra);
+				console.log('keypress: ' + e.which);
+			});
+			$('#cifrada').on('keydown',function(e){
+				var letra = String.fromCharCode(e.which);
+				console.log('keydown: ' + e.which);
+			});
+		})
+	</script>
+</head>
+<body>
+	<label for="pass">Introduce la contraseña</label> <br>
+	<input type="password" id="cifrada"><br>
+	<input type="text" id="plano" disabled>
+</body>
+</html>

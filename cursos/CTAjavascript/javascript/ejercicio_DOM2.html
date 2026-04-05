@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio2 de manejo del DOM con javascript</title>
+<!-- 	
+Página que muestre inicialmente la frase:
+	En un lugar de la mancha …
+● Cuando haga click en el texto debe completarse la
+frase con:
+	De cuyo nombre no quiero acordarme …
+● Y al volver a pinchar, debe desaparecer. 
+-->
+<style>
+	.novisitado{
+		background: lightgreen;
+	}
+	.leido{
+		background: lightblue;
+	}
+	.visitado{
+		background: lightcoral;
+	}
+</style>
+</head>
+<script>
+	window.onload = function(){
+		// añadimos un nuevo párrafo a la página
+		// 1º creamos el elemento <p>
+		var miParrafo = document.createElement("p");
+		// 2º añadimos atributo <p class="novisitado">
+		miParrafo.setAttribute("class", "novisitado");
+		// 3º creamos el elemento texto
+		var contenido = document.createTextNode("En un lugar de la mancha ...");
+		// 4º añadimos texto al párrafo
+		miParrafo.appendChild(contenido);
+		// 5º añadimos el párrafo al final del <body>
+		document.body.appendChild(miParrafo);
+		//=============================================
+		// Cuando hacemos click en el párrafo cambiamos la frase
+		// Comprobamos que existe el párrafo con la clase ".novisitado"
+		var novisitado = document.querySelectorAll("p");
+		var click = 0;
+		novisitado[0].onclick = function(event){
+			console.log(event);
+			if (click == 0){
+				click++;
+				novisitado[0].innerText += " De cuyo nombre no quiero acordarme." 
+				novisitado[0].setAttribute("class", "leido");
+			}else if (click == 1){
+				// quitamos el parrafo inicial
+				//var parrafo = document.getElementsByTagName("p");
+				novisitado[0].innerText = "En un lugar de la mancha ...";
+				//parrafo[0].parentNode.removeChild(parrafo[0]);
+				novisitado[0].setAttribute("class", "novisitado");
+				click--;				
+			}
+		};
+	};
+</script>
+<body>
+	
+</body>
+</html>

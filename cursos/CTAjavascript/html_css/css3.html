@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Ejemplo de CSS3</title>
+	<style>
+		body{ text-align: center;	}
+		section{
+			display: inline-block;
+			border: 1px solid black;
+			padding: 2%;
+			width: 30%;
+		}
+		#principal1{
+			display: block;
+			width: 500px;
+			margin: 50px auto;
+			padding: 15px;
+			text-align: center;
+			border: 1px solid black;
+			background: #DDDDDD;
+			/*=== CSS3 ===*/
+			border-radius: 25px;
+			box-shadow: black 3px 5px 10px;
+			background: -webkit-linear-gradient(top left,DarkRed,DarkOrange,Yellow,Green,Cyan,Magenta);
+
+			transform: skew(15deg/0deg);
+		}
+		#principal2{
+			text-align: center;
+			background: #DDDDDD;
+
+			border-radius: 40% / 25%;
+			box-shadow: rgba(80,80,80,0.9) -3px -5px 10px inset;
+			background: -webkit-radial-gradient(center,ellipse,White 7%,DarkOrange 50%);
+
+			transform: scale(-1.3,1.2)
+		}
+		#principal3{
+			text-align: center;
+			background: #AAAAAA;
+
+			border-radius: 1px 5px 10px 20px;
+			box-shadow: black 3px 5px 10px inset;
+			color: hsla(220,75%,90%,0.7);
+
+			border:10px solid transparent;
+			border-image: url("./images/iconos/flower.gif") 25% round;
+
+			outline: 2px dashed DarkBlue;
+			outline-offset: 1px;
+
+			transform: rotate(10deg);
+		}
+		#principal4{
+			margin: 35px;
+			background: -webkit-radial-gradient(left,circle,White 7.9%,DarkOrange 8%,Blue 30%,Green 50%);
+
+			outline: 2px groove DarkBlue;
+			outline-offset: -15px;
+
+			transform: translate(-117px,115px) skew(5deg);
+		}
+		#principal5{
+			background: #900;
+			transition-property: background-color, transform;
+			transition-duration: 10s;
+			transition-delay: 1s;
+			transition-timing-function: ease-in-out;
+		}
+		#principal5:hover{
+			background-color: #090;
+			transform: scale(-0.9,-0.5) rotate(10deg) skew(-10deg) translate(-7px,5px);
+		}
+
+	</style>
+</head>
+<body>
+	<header id="principal1">
+		<span id="titulo1"><b>Principal1</b><br />plantilla con estilos avanzados con css3</span>
+	</header>
+	<section id="principal2">
+		<span id="titulo2"><b>Principal2</b><br />plantilla con estilos avanzados con css3</span>
+	</section>
+	<section id="principal3">
+		<span id="titulo3"><b>Principal3</b><br />plantilla con estilos avanzados con css3</span>
+	</section>
+	<section id="principal4">
+		<span id="titulo4"><b>Principal4</b><br />plantilla con estilos avanzados con css3</span>
+	</section>
+	<section id="principal5">
+		<span id="titulo5"><b>Principal5</b><br />plantilla con estilos avanzados con css3</span>
+	</section>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Ejemplo de jquery</title>
+	<script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+</head>
+<script>
+	$(document).ready(function(){
+		// Añadimos nuevo parrafo a la página
+		// 1º Creo elemento <p>
+		var mip = $('<p></p>');
+		mip.text('Hola mundo')
+		// 2º Añadimos atributo <p name="mip">
+		mip.attr('name','mip');
+		// 3º Añadimos parrafo al final del <body>
+		$('body').append(mip);
+		// =======================================================================
+
+		// Creamos otro párrafo pero en una sóla línea
+		$('body').append($('<p>Hola mundo2</p>').attr({'name': 'mip2', 'id': 'p'}));
+		// =======================================================================
+
+		// Otra manera de crear otro párrafo
+		$('body').append(
+			$('<p></p>',{
+				"text": "Hola mundo3",
+				"name": "mip3"
+			})
+		);
+		// =======================================================================
+
+		// Insertar un botón entre los 2 primeros párrafos
+		// 1º Creo <input>
+		// 2º le doy atributos para ser boton
+		// 3º lo inserto antes de mi Párrafo
+		$('<input>').attr({
+			'type': 'button',
+			'name': 'boton',
+			'value': 'boton',
+		}).insertBefore('p[name=mip');
+		// =======================================================================
+
+		// Modificamos el párrafo insertado
+		// 1º cambiamos el texto
+		// 2º modificamos etilo para ponerl color naranja a la letra
+		$('p[name=mip').text('nuevo texto').css('color','DarkOrange');
+		// =======================================================================
+			
+		// Quitamos el párrafo inicial
+		$('body > p:first').remove();
+		// =======================================================================
+
+		// Sobre el párrafo incluimos una cabecera <h1>
+		// 1º Lo desatachamos para añadirlo después dentro de <h1>
+		var antiguoP = $('p[name=mip]').detach();
+		$('body').append(
+			$('<h1>').append(antiguoP)
+		);
+		// 2º Actualizamos el estilo del párrafo poniendo el color de fondo negro
+		$('p[name=mip').css({
+			'color': 'DarkOrange',
+			'background-color': 'Black',
+		});
+		// =======================================================================
+	});
+</script>
+<body>
+	<p>Esta página es <strong>muy sencilla</strong></p>
+</body>
+</html>

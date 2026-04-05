@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Ejemplos de animaciones</title>
+	<style>
+		.hatch:hover{
+			width: 200px;
+			animation-name: saltito;
+			animation-duration: 5s;
+			animation-timing-function: ease-in-out;
+			animation-iteration-count: 2;
+		}
+		@keyframes saltito{
+			0% { transform: rotate(0deg) scaleY(0.5); }
+			20% {	transform: rotate(-2deg) scaleY(1.05); }
+			30% {	transform: rotate(2deg) scaleY(1); }
+			40% {	transform: rotate(-1deg); }
+			50% {	transform: rotate(1deg); }
+			65% {	transform: rotate(-0.5deg); }
+			80% {	transform: rotate(0.5deg); }
+			100% {	transform: rotate(0deg); }
+		}
+	</style>
+</head>
+<body>
+	<img src="./images/iconos/flower.gif" alt="" class="hatch">
+</body>
+</html>
