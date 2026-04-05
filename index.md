@@ -195,6 +195,7 @@
       * **sass samples**
 
     * **git**
+      * [Guía: Transformar Repositorio Markdown a Web con MkDocs y GitHub Pages](./docs/programacion/git/Guia_MkDocs_Paso_a_Paso.md)
       * [Cómo eliminar archivos de un repositorio Git después de ignorarlos](./docs/programacion/git/eliminarFicheroRepo.md)
       * [Uso de git](./docs/programacion/git/git.md)
       * [Crear un servidor propio de Git](./docs/programacion/git/gitServer.md)
