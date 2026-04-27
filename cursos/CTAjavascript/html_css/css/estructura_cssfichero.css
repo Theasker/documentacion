@@ -1,0 +1,132 @@
+body{
+	background: GhostWhite;
+}
+
+/* borde para identificar elementos */
+header,nav,section,article,aside,footer{
+	border: 1px solid DarkOrange;
+}
+
+* {
+	/*
+		padding y border se aplicara dentro de las medidas width y height.
+		asi dos elementos con el mismo ancho y alto 
+		pero diferentes separaciones serán del mismo tamaño
+	*/
+	margin: 0%;
+	padding: 0%;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* Que su informacion este conctrada en la pantalla */
+header,nav,footer{
+	text-align: center;
+}
+
+/* como situo a los elementos de la lista */
+li{
+	text-align: inherit;
+	list-style: square; /* delante un cuadrado */
+	list-style-position: inside; /* sino se dibuja fuera del border */
+}
+
+img {
+	width: 30%;
+}
+
+/* colocacion adaptativa */
+body {
+	/* distribución en cajas 
+		body ocupa el 100% del dispositivo
+	*/
+	display: inline-block;
+	width: 100%;
+}
+
+header,nav{
+	/* ocupan el 100% del dispositivo, duna debajo de otra */
+	width: 100%;
+}
+/* 
+	entre la secciion y el aside me aseguro que no superen el 100%
+	en la estructura de cajas la seccion a la izquierda y el aside a la derecha
+*/
+section {
+	width: 70%;
+	float: left;
+}
+
+aside {
+	width: 30%;
+	float: right;
+}
+
+/* Hay 3 elementos dentro de la seccion
+	su ancho está limitado al section
+	entre los 3 me aseguro que no superen el 100% del section 
+	se van clolcando en orden hacia la izq.
+*/
+section > article {
+	width: 33%;
+	float: left;
+}
+
+footer {
+	/* evitar que el footer suba y descoloque la composicion de cajas */
+	clear: both;
+}
+
+/* Hacer que las filas impares de la tabla tenga otro fondo */
+tr:nth-child(2n+1){
+	background: moccasin;
+}
+
+#oro{
+	background: gold;
+}
+
+@media screen and (min-width: 900px) and (max-width: 1200px) {
+	body{
+		background: lightgreen;
+	}
+	section{
+		width: 50%;
+		float: left;
+	}
+	aside{
+		width: 100%;
+	}
+}
+
+@media screen and (min-width: 600px) and (max-width: 900px) {
+	body{
+		background: lightblue;
+	}
+	section{
+		width: 50%;
+		float: left;
+	}
+	aside{
+		width: 100%;
+	}
+	section > article:nth-child(2),article:nth-child(2){
+		width: 90%;
+	}
+	section > article:nth-child(4){
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	body{
+		background: lightpink;
+	}
+	section,aside {
+		width: 100%;
+	}
+	section > article {
+		width: 100%;
+	}
+}

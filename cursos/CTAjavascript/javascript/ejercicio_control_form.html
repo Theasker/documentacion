@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Ejercicio de ejemplo de formulario</title>
+	<link rel="stylesheet" href="">
+	<style>
+		section {width: 400px;margin: 0 auto;}
+		label,input {display: block;}
+		input{margin-bottom: 10px;}
+		input[type="submit"],input[type="reset"]{display: inline;}
+		input[type="radio"] {display: inline;}
+		input[type="radio"] + label {display: inline;white-space: pre-line;}
+		input:invalid { border: 2px solid orange; }
+		.erroroculto{color: red; visibility: hidden;}
+		.errorvisible{color: red;}
+	</style>
+	<script>
+		window.onload = function(){
+			var pass = document.getElementById("pass");
+			
+			pass.onblur = function(){
+				var controlMayus = false;
+				var controlMinus = false;
+				var controlNum = false;
+				for(x = 0;x<pass.value.length;x++){
+					var mayus = /^[A-Z]$/;
+					var minus = /^[a-z]$/;
+					var num = /^\d$/;
+					if ( mayus.test(pass.value.charAt(x)) ){
+						controlMayus = true;
+					}
+					if ( minus.test(pass.value.charAt(x)) ){
+						controlMinus = true;
+					}
+					if ( num.test(pass.value.charAt(x)) ){
+						controlNum = true;
+					}
+				};
+				if (!controlNum || !controlMayus || controlMinus){
+					pass.value = "";
+					document.getElementById("errorpass").setAttribute("class", "errorvisible");
+					pass.focus();
+				}else{
+					document.getElementById("errorpass").setAttribute("class", "erroroculto");
+				}
+			};
+		};
+	</script>
+</head>
+<body>
+	<!-- controlar que la contraseña tiene como mínimo una mayúscula y un número -->
+	<form action="">
+		<section>
+			<form action="ejercicio_form.html" method="post">
+				<fieldset>
+					<legend>Datos conexión</legend>
+
+					<label for="nombre">Nombre:</label>
+					<!-- Debe de empezar por una letra -->
+					<input type="text" id="nombre"  name="nombre" require 
+						placeholder="Introduce un nombre" 
+						pattern="^[A-Za-z].*$" 
+						title="Primera letra en mayúsculas">
+
+					<label for="pass" name="pass">Contraseña:</label>
+					<input type="password" id="pass" minlength="8" pattern="^.{8}*$" title="8 caracteres" require >
+					<span id="errorpass" class="erroroculto">1 mayúscula y 1 número como mínimo</span>
+				</fieldset>
+				<fieldset>
+					<legend>Datos personales</legend>
+					
+					<label for="edad">Edad:</label>
+					<!-- pattern="^[0-9]|[0-9][0-9]|10[0-9]|110$" -->
+					<input type="number" name="edad" min="0" max="110" id="edad" placeholder="edad" require >
+					
+					<label for="nacimiento">Fecha de nacimiento:</label>
+					<input type="date" id="nacimiento" name="nacimiento" placeholder="dd/mm/aaaa" require >
+					
+					<label for="email">Email:</label>
+					<input type="email" name="email" id="email" placeholder="email">
+					
+					<label for="sexo">Sexo</label>
+					<input type="radio" id="sexo" name="sexo" value="hombre" require> <label>hombre</label>
+					<input type="radio" id="sexo" name="sexo" value="mujer" require> <label>mujer</label>
+
+					<label for="telfijo">Teléfono fijo</label>
+					<input type="text" id="telfijo" name="telfijo" 
+					pattern="^[8|9]\d{8}$" 
+					title="telefono que empiece por 8 ó 9">
+
+					<label for="telmovil">Teléfono movil</label>
+					<input type="text" id="telmovil" name="telmovil" 
+					pattern="^[6|7][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$">
+
+					<label>Comentarios</label>
+					<textarea rows="5" cols="40" placeholder="Dejar comentarios"></textarea>
+				</fieldset>
+				<input type="submit" name="submit" value="submit">
+				<input type="reset" name="reset" value="reset">
+			</form>
+		</section>
+</body>
+</html>

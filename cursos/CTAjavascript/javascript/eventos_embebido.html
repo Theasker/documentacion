@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Uso de evento en linea</title>
+  <script>
+    window.onload = function inicial(){
+        document.getElementsByTagName('input')[0].onclick = function(){
+          var mip = document.createElement('p');
+          var texto = document.createTextNode('Hola mundo');
+          mip.appendChild(texto);
+          document.getElementsByTagName('input')[0].parentNode.appendChild(mip);
+        };
+      };
+  </script>
+</head>
+<body>
+  <div>
+    <input type="button" name="boton" value="saludar"/>
+  </div>
+</body>
+</html>

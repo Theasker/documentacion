@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width initial-scale=1.0">
+	<title></title>
+	
+	<style>
+	
+		* {
+			/*
+				padding y border se aplicara dentro de las medidas width y height.
+				asi dos elementos con el mismo ancho y alto 
+				pero diferentes separaciones serán del mismo tamaño
+			*/
+			margin: 0%;
+			padding: 0%;
+			-moz-box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+		h1,section,article,p{border: 1px solid DarkOrange;}
+		h2{width: 100%;background: moccasin;}
+		body,a{width: 100%;}
+		section,aside{width: 33%;float: left;}
+		h1,section{text-align: center;}
+		
+		/*los hijos pares que sean de tipo article que su padre sea el tercer hijo que sea de tipo section*/
+		section:nth-child(3) article:nth-child(2n) {background: lightgreen;}
+		section:nth-of-type(1) article:nth-of-type(odd) {background: lightblue;}
+
+		article p:nth-child(1){color: red;text-align:left;}
+		article p:nth-child(2){color: yellow;text-align:center;}
+		article p:nth-child(3){color: black;text-align:right;}
+
+		a{color: red;}
+		aside p:last-child a{color: brown;}
+	</style>
+</head>
+<body>
+	<header><h1>CABECERA</h1></header>
+	<section>
+		<h2>seccion principal</h2>
+		<article>
+			<p>parrafo1</p>
+			<p>parrafo2</p>
+			<p>parrafo3</p>
+		</article>
+		<article>
+			<p>parrafo1</p>
+			<p>parrafo2</p>
+			<p>parrafo3</p>
+		</article>
+		<article>
+			<p>parrafo1</p>
+			<p>parrafo2</p>
+			<p>parrafo3</p>
+		</article>
+	</section>
+	<section>
+		<h2>seccion secundaria</h2>
+		<article>
+			<p>parrafo1</p>
+			<p>parrafo2</p>
+			<p>parrafo3</p>
+		</article>
+		<article>
+			<p>parrafo1</p>
+			<p>parrafo2</p>
+			<p>parrafo3</p>
+		</article>
+		<article>
+			<p>parrafo1</p>
+			<p>parrafo2</p>
+			<p>parrafo3</p>
+		</article>
+	</section>
+	<aside>
+		<p><a href="">enlace1</a></p>
+		<p><a href="">enlace2</a></p>
+		<p><a href="">enlace3</a></p>
+		<p><a href="">enlace4</a></p>
+	</aside>
+</body>
+</html>
