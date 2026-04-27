@@ -1,0 +1,19 @@
+site_name: Base de Conocimiento Global
+site_description: Documentación de Desarrollo, Sistemas e IA
+site_author: Theasker
+
+theme:
+  name: material
+  palette: 
+    - scheme: default
+      toggle:
+        icon: material/brightness-7 
+        name: Cambiar a modo oscuro
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Cambiar a modo claro
+
+plugins:
+  - search:
+      lang: es
