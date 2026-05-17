@@ -1,5 +1,7 @@
 # Polybar
 
+Polybar es una herramienta rápida y sencilla de utilizar para crear barras de estado personalizadas en entornos Linux. Es especialmente popular entre usuarios de gestores de ventanas (window managers) como [bspwm] e [i3wm] por su alta capacidad de personalización y diseño estético, permitiendo mostrar información del sistema, música, red y más
+
 ## Instalación
 ```bash
 sudo pacman -S polybar

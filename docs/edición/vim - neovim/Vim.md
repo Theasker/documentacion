@@ -57,7 +57,9 @@ Estando en modo Normal pulse  `i`  para insertar texto.
 * `d$` =>  para borrar hasta el final de la línea.
 * **Borrar un caracter**: posicionar el cursor sobre el carácter a borrar y presionar `x`. Esto también borra el espacio ocupado por el caracter. Para borrar el carácter anterior a la posición del cursor pulsar X.
 * **Remover una palabra**: posicionar el cursor al principio de la palabra y pulsar `dw`, entonces se borrara la palabra y el espacio que la misma ocupaba. Para borrar parte de una palabra, hay que colocar el cursor a la derecha de la parte a modificar y teclear `dw`.
-* **Eliminar una línea**: pulsando `dd` se borra una línea y el espacio que esta ocupaba. Para remover parte de una línea, podemos a) borrar todo lo que este a la derecha del cursor presionando la tecla `D`, o `b`) borrar todo lo que este a la izquierda del mismo basta con pulsar `d0` (`d` seguida del número `cero`).
+* **Eliminar una línea**: pulsando `dd` se borra una línea y el espacio que esta ocupaba. Para remover parte de una línea, podemos 
+  * a) borrar todo lo que este a la derecha del cursor presionando la tecla `D`, o 
+  * b) borrar todo lo que este a la izquierda del mismo basta con pulsar `d0` (`d` seguida del número `cero`).
 * **Borrar hasta el final del archivo**: posicionar el cursor sobre la primera línea que se desea eliminar y presionar `dG`. Esto eliminará todo desde la línea actual hasta el final del archivo.
 * **Borrar desde el principio del archivo**: colocar el cursor en la última línea que haya que remover y luego presionar `d1G`.
 

@@ -2,22 +2,15 @@
 
 - [Enlaces pendientes](#enlaces-pendientes)
   - [Cursos pendientes](#cursos-pendientes)
-
 ---
-
   * [Curso Sass de codeacademy](https://www.codecademy.com/learn/learn-sass?utm_source=customerio&utm_campaign=sass_announcement_html_css&utm_medium=email_newsletter&utm_content=cta)
   * http://electron.atom.io/docs/tutorial/quick-start/
   * [Trabajando con Sass](http://html5facil.com/tutoriales/maquetando-sass-html5-parte-1/)
   * [Tutorial Typescript en aprendefaclmente.com](http://www.aprende-facilmente.com/typescript/tutorial-de-typescript-parte-1/)
-  * [Udemy - Dominando Wordpress](https://www.udemy.com/dominando-wordpress)
-  * [Coursera - Desarrollo de Aplicaciones móviles con Android](https://www.coursera.org/specializations/programacion-android)
-  * [Udacity - Google Courses](https://www.udacity.com/google)
-  * [ECO - Curso de Autocad](https://hub11.ecolearning.eu/course/iniciacion-al-autocad-control-de-escalas-y-formato/classroom/#unit79/kq243)
+    * [Coursera - Desarrollo de Aplicaciones móviles con Android](https://www.coursera.org/specializations/programacion-android)
   * **Cursos de Python**
     * [Codeavengers - Python](https://www.codeavengers.com/profile#python)
     * [Codeacademy - Python](https://www.codecademy.com/es/tracks/python-traduccion-al-espanol-america-latina-clone-1)
-  * **Cursos programación para niños**
-    * [codecombat](https://codecombat.com/)
   * **Raspberry Pi**
      * [Conectar la raspberry por iscsi y almacenar ahí los sistemas operativos](https://www.youtube.com/watch?v=RhV8kg_g4hc)
 	  * [Cosas que se puede hacer con el módulo de cámara](https://www.xataka.com/especiales/once-proyectos-con-la-raspberri-pi-y-una-camara-para-aprender-y-divertirte?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+xataka2+%28Xataka%29)
@@ -63,4 +56,5 @@
   * Aprende inglés: https://www.udemy.com/course/english-launch-learn-english-for-free-upgrade-all-areas/learn/lecture/7001658#overview
   * Curso de Angular 17: https://www.youtube.com/watch?v=soInCF7nbDw
   * Curso de Symphony: https://www.udemy.com/course/symofny-7/learn/lecture/42606926#overview
+  
   
