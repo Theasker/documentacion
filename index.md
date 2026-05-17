@@ -5,6 +5,7 @@
 
   * **IA**
     * [Inteligencia Artificial](./docs/IA/ia.md)
+    * [Prompts](./docs/IA/prompts.md)
 
   * **curriculum**
 
@@ -264,6 +265,7 @@
     * [NGROK - Exponé tu app con SSL GRATIS! (2022-09-07)](./docs/redes/ngrok.md)
     * [Samba](./docs/redes/samba.md)
     * [Tailscale](./docs/redes/tailscale.md)
+    * [🚀 GUÍA DEFINITIVA DE TÚNELES Y EXPOSICIÓN DE SERVICIOS (POST-PROBADO)](./docs/redes/tuneles.md)
     * [variosRedes.md](./docs/redes/variosRedes.md)
     * [VPN Wireguard](./docs/redes/wireguard.md)
 
@@ -300,8 +302,10 @@
     * [tmux](./docs/sistema/tmux.md)
     * [Utilidades varias de Sistemas](./docs/sistema/variosSistema.md)
     * [wget_oracle.md](./docs/sistema/wget_oracle.md)
+    * [Wake On LAN via Tailscale](./docs/sistema/wol-tailscale.md)
     * [Sistema de ficheos XFS](./docs/sistema/xfs.md)
     * [Cómo cambiar la resolución de pantalla usando xrandr](./docs/sistema/xrandr.md)
+    * [Guía Técnica de ZFS: Desde la Instalación hasta la Gestión de Datos](./docs/sistema/zfs.md)
     * [Zram](./docs/sistema/zram.md)
     * [Zsh](./docs/sistema/zsh.md)
 
