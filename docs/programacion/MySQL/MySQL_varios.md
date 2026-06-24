@@ -1,1 +1,2 @@
 * aiven.io => Plataforma para crear gratis servidores de datos como MySQL
+* https://turso.tech/ => Turso es una plataforma de bases de datos distribuida y edge-first basada en libSQL (un fork de código abierto de SQLite). Combina la ligereza, velocidad y simplicidad de SQLite con la capacidad de replicar datos globalmente en la nube, optimizando la latencia para arquitecturas serverless y aplicaciones modernas. Puedes instalarlo en docker.

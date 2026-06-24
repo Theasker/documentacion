@@ -1,1 +1,0 @@
- * spotiflyer => Multiplatform Music Downloader, Supports Spotify / Gaana / Youtube Music / Jio Saavn / SoundCloud (https://blog.desdelinux.net/spotiflyer/#Como_se_instala_en_GNULinux)

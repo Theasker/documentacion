@@ -5,7 +5,9 @@ ZRAM es un módulo para optimizar Linux notablemente el uso de la memoria de int
 
 El uso de zram también es una buena manera de reducir los ciclos de lectura/escritura del disco debido al intercambio en SSD.
 
-## Instalar en Arch Linux
+## Usar ZRAM para mejorar nuestra RAM
+
+### Instalación
 
     $ yay -S zramd
     # systemctl enable zramd
@@ -48,6 +50,9 @@ NUM_DEVICES=2
 # Skip initialization if running inside a virtual machine
 # SKIP_VM=false
 ```
+
+## Crear un disco en memoria con ZRAM
+
 
 ## Bibliografía
 
