@@ -204,6 +204,7 @@
       * [Cómo eliminar archivos de un repositorio Git después de ignorarlos](./docs/programacion/git/eliminarFicheroRepo.md)
       * [Uso de git](./docs/programacion/git/git.md)
       * [Crear un servidor propio de Git](./docs/programacion/git/gitServer.md)
+      * [Flujo de Trabajo Git: Desarrollo Híbrido (Casa / Trabajo)](./docs/programacion/git/git_workflow.md)
       * [Cómo trabajar con submodules en Git](./docs/programacion/git/submodulos.md)
       * [Volver a un commit anterior](./docs/programacion/git/volverAcommit.md)
 
@@ -229,9 +230,6 @@
     * **mongodb**
       * [MongoDB](./docs/programacion/mongodb/mongodb.md)
 
-    * **multimedia**
-      * [multimediaVarios.md](./docs/programacion/multimedia/multimediaVarios.md)
-
     * **php**
       * [variosPhp.md](./docs/programacion/php/variosPhp.md)
 
@@ -245,8 +243,9 @@
 
     * **python**
       * [Entornos virtuales en Python](./docs/programacion/python/EntornosVirtuales.md)
+      * [FastAPI](./docs/programacion/python/FastAPI.md)
       * [argumentosLineaComandos.md](./docs/programacion/python/argumentosLineaComandos.md)
-      * [Django](./docs/programacion/python/django.md)
+      * [Documentación de `uv`: El Gestor de Paquetes Ultra-Rápido para Python](./docs/programacion/python/uv-gestor_paquetes_python.md)
       * [Varios](./docs/programacion/python/varios.md)
 
     * **rust**
@@ -279,12 +278,15 @@
     * **Oracle Cloud**
       * [Traer un nombre de dominio a OCI](./docs/redes/Oracle Cloud/dominioOCI.md)
       * [How to fix in-acessible instance in Oracle Cloud Infrastructure (OCI)](./docs/redes/Oracle Cloud/fixInaccesibleOCIinstance.md)
+      * [Oracle Cloud Infrastructure - Plan Always Free](./docs/redes/Oracle Cloud/oci-always-free.md)
+      * [OCI CLI - Instalación y Configuración](./docs/redes/Oracle Cloud/oci-cli-setup.md)
 
     * **nginx**
       * [Configurar autenticación con contraseña en Nginx](./docs/redes/nginx/htaccess.md)
 
     * **ovh**
       * [Actualización de un Dynhost de OVH](./docs/redes/ovh/ovhUpdateDynamicIP.md)
+      * [OVHcloud CLI - Configuración y Uso](./docs/redes/ovh/ovhcloud-cli.md)
 
     * **ssh**
       * [sshConfig.md](./docs/redes/ssh/sshConfig.md)
@@ -304,7 +306,9 @@
     * [Comando `sed`](./docs/sistema/sed.md)
     * [Instalar snap](./docs/sistema/snap.md)
     * [sshfs](./docs/sistema/sshfs.md)
+    * [Streaming local con Sunshine + Moonlight](./docs/sistema/sunshine-moonlight-arch.md)
     * [tmux](./docs/sistema/tmux.md)
+    * [Tutorial de UFW (Uncomplicated Firewall)](./docs/sistema/ufw.md)
     * [Utilidades varias de Sistemas](./docs/sistema/variosSistema.md)
     * [wget_oracle.md](./docs/sistema/wget_oracle.md)
     * [Wake On LAN via Tailscale](./docs/sistema/wol-tailscale.md)
@@ -389,6 +393,9 @@
     * **varios**
       * [ssh-web.md](./docs/sistema/varios/ssh-web.md)
       * [varios.md](./docs/sistema/varios/varios.md)
+
+    * **xfce4**
+      * [Barra lateral de Thunar — Solución](./docs/sistema/xfce4/thunar-barra-lateral.md)
 
   * **varios**
     * [Free and OpenSource Photo Libraries](./docs/varios/PhotoLibraries.md)
