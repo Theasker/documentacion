@@ -204,6 +204,8 @@
       * [Cómo eliminar archivos de un repositorio Git después de ignorarlos](./docs/programacion/git/eliminarFicheroRepo.md)
       * [Uso de git](./docs/programacion/git/git.md)
       * [Crear un servidor propio de Git](./docs/programacion/git/gitServer.md)
+      * [Borrar archivos de git como si no hubieran estado](./docs/programacion/git/git_borrar_archivos.md)
+      * [Eliminar cambios](./docs/programacion/git/git_eliminar_cambios.md)
       * [Flujo de Trabajo Git: Desarrollo Híbrido (Casa / Trabajo)](./docs/programacion/git/git_workflow.md)
       * [Cómo trabajar con submodules en Git](./docs/programacion/git/submodulos.md)
       * [Volver a un commit anterior](./docs/programacion/git/volverAcommit.md)
@@ -385,10 +387,6 @@
       * [Awesome-Selfhosted](./docs/sistema/docker/awesome-selfhosted.md)
       * [Dockerholics](./docs/sistema/docker/dockeholics.md)
       * [selfHostedGuide.md](./docs/sistema/docker/selfHostedGuide.md)
-
-    * **git**
-      * [Borrar archivos de git como si no hubieran estado](./docs/sistema/git/git_borrar_archivos.md)
-      * [Eliminar cambios](./docs/sistema/git/git_eliminar_cambios.md)
 
     * **varios**
       * [ssh-web.md](./docs/sistema/varios/ssh-web.md)
