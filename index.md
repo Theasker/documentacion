@@ -5,6 +5,7 @@
 
   * **IA**
     * [Inteligencia Artificial](./docs/IA/ia.md)
+    * [Guía Paso a Paso: Crear Conexión MCP para Visual Studio Code](./docs/IA/mcp.md)
     * [Prompts](./docs/IA/prompts.md)
 
   * **curriculum**
@@ -115,12 +116,15 @@
         * [Redes en LXC](./docs/cursos/Virtualizacion_linux/modulo8/redes.md)
 
   * **edición**
-    * [Uso de Vim](./docs/edición/Vim.md)
     * [varioesEdicion.md](./docs/edición/varioesEdicion.md)
 
     * **markdown**
       * [markdown-es.md](./docs/edición/markdown/markdown-es.md)
       * [markdown.md](./docs/edición/markdown/markdown.md)
+
+    * **vim - neovim**
+      * [Uso de Vim](./docs/edición/vim - neovim/Vim.md)
+      * [Neovim - Nvim](./docs/edición/vim - neovim/neovim.md)
 
   * **formación**
 
@@ -288,6 +292,7 @@
       * [Comandos "avanzados" de SSH](./docs/redes/ssh/sshvarios.md)
 
   * **sistema**
+    * [Kitty](./docs/sistema/Kitty.md)
     * [VPS.md](./docs/sistema/VPS.md)
     * [MANUAL TÉCNICO: ARRANQUE DE ISOs DESDE GRUB (LOOPBACK)](./docs/sistema/grub_iso.md)
     * [Hard Links](./docs/sistema/hard_links.md)
@@ -305,9 +310,13 @@
     * [Wake On LAN via Tailscale](./docs/sistema/wol-tailscale.md)
     * [Sistema de ficheos XFS](./docs/sistema/xfs.md)
     * [Cómo cambiar la resolución de pantalla usando xrandr](./docs/sistema/xrandr.md)
+    * [Zellij](./docs/sistema/zellij.md)
     * [Guía Técnica de ZFS: Desde la Instalación hasta la Gestión de Datos](./docs/sistema/zfs.md)
     * [Zram](./docs/sistema/zram.md)
     * [Zsh](./docs/sistema/zsh.md)
+
+    * **Android**
+      * [Android varios](./docs/sistema/Android/varios.md)
 
     * **Raspberry**
       * [Clonar la tarjeta SD de la raspberry en caliente](./docs/sistema/Raspberry/hotCloneSDraspberry.md)
@@ -368,6 +377,11 @@
       * [Sistema de ficheros btrfs](./docs/sistema/btrfs/btrfs.md)
       * [Instalación Arch Linux sobre Btrfs](./docs/sistema/btrfs/installLinuxBtrfs.md)
 
+    * **docker**
+      * [Awesome-Selfhosted](./docs/sistema/docker/awesome-selfhosted.md)
+      * [Dockerholics](./docs/sistema/docker/dockeholics.md)
+      * [selfHostedGuide.md](./docs/sistema/docker/selfHostedGuide.md)
+
     * **git**
       * [Borrar archivos de git como si no hubieran estado](./docs/sistema/git/git_borrar_archivos.md)
       * [Eliminar cambios](./docs/sistema/git/git_eliminar_cambios.md)
@@ -388,10 +402,8 @@
     * [Varios](./docs/varios/varios.md)
     * [viajes.md](./docs/varios/viajes.md)
 
-    * **docker**
-      * [Awesome-Selfhosted](./docs/varios/docker/awesome-selfhosted.md)
-      * [Dockerholics](./docs/varios/docker/dockeholics.md)
-      * [selfHostedGuide.md](./docs/varios/docker/selfHostedGuide.md)
+    * **fitness**
+      * [🐉 RUTINA SECRETA DE 20 MINUTOS - BRUCE LEE (1965)](./docs/varios/fitness/rutina_bruce_lee_kg.md)
 
     * **lovehacks**
       * [Comandos para arrancar el Symfony de lovehacks](./docs/varios/lovehacks/comandosSymfony.md)
