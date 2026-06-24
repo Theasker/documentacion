@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<script>
+
+function getAvg( ...values ) {
+    return values.reduce( function ( p, c ) {
+        return p + c;
+    } ) / values.length;
+}
+ 
+console.log(getAvg( 3, 7 ));
+console.log(getAvg(3,7,8,4));
+console.log(getAvg(2,10));
+
+var getAvg2 = (...values)=>values.reduce((p,c)=>p+c)/values.length;
+
+console.info("funcion flecha: ",getAvg2(6,5,4));
+
+</script>    
+</head>
+<body>
+
+</body>
+</html>

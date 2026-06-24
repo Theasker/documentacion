@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Web Storage</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+	<script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<script>
+		$(document).ready(function(){
+			$('input#guardar').on('click',function(){
+				var c = $('input#clave').val();
+				var v = $('input#valor').val();
+				sessionStorage.setItem(c,v);
+				localStorage.setItem(c,v);
+			})
+			$('input#buscar').on('click',function(){
+				var cbus = $('input#claveBuscar').val();
+				var vbus = sessionStorage.getItem(cbus);
+				$('input#valorBuscar').attr('value',vbus);
+			})
+			$('input#claveBorrar').on('click',function(){
+				var cbor = $('input#claveBorrar').val();
+				sessionStorage.removeItem(cbor);
+				localStorage.removeItem(cbor);
+			})
+		})
+	</script>
+</head>
+<body>
+	<div class="container">
+
+		<form action="" class="form-inline col-md-offset-2">
+			<div class="form-group">
+				<label for="">Introduce Clave</label>
+				<input type="text" class="form-control" id="clave" placeholder="Pon clave">
+			</div>
+			<div class="form-group">
+				<label for="">Introduce valor</label>
+				<input type="text" class="form-control" id="valor" placeholder="Pon valor">
+			</div>
+			<input type="button" id="guardar" class="btn btn-primary" value="Guardar">
+		</form>
+
+		<form action="" class="form-inline col-md-offset-2">
+			<div class="form-group">
+				<label for="">Clave a buscar</label>
+				<input type="text" class="form-control" id="claveBuscar" >
+			</div>
+			<div class="form-group">
+				<label for="">Valor encontrado</label>
+				<input type="text" class="form-control" id="valorBuscar" disabled>
+			</div>
+			<input type="button" id="buscar" class="btn btn-info" value="Buscar">
+		</form>
+
+		<form action="" class="form-inline col-md-offset-2">
+			<div class="form-group">
+				<label for="">Clave a borrar</label>
+				<input type="text" class="form-control" id="claveBorrar">
+			</div>
+			<input type="button" id="borrar" class="btn btn-danger" value="Borrar">
+		</form>
+
+	</div>
+	
+</body>
+</html>

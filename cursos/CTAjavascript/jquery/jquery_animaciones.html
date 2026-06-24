@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejemplo de efectos y animaciones con jquery</title>
+	<script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+</head>
+<script>
+	$(document).ready(function(){
+		var mostrado = true;
+		jQuery.fx.speeds = {'slow': 850,'high': 200,'_default': 400}
+		$('#normal').on('click',function(){
+			if (mostrado){
+				$('p').hide();
+				mostrado = false;
+			}else{
+				$('p').show();
+				mostrado = true;
+			}
+		});
+		$('#rapido').on('click',function(){
+			if (mostrado){
+				$('p').hide('high');
+				mostrado = false;
+			}else{
+				$('p').show('high');
+				mostrado = true;
+			}
+		});
+		$('#lento').on('click',function(){
+			if (mostrado){
+				$('p').hide('slow');
+				mostrado = false;
+			}else{
+				$('p').show('slow');
+				mostrado = true;
+			}
+		});
+		$('#fade').on('click',function(){
+			if (mostrado){
+				$('p').fadeIn('slow');
+				mostrado = false;
+			}else{
+				$('p').fadeOut('slow');
+				mostrado = true;
+			}
+		});
+		$('#slide').on('click',function(){
+			if (mostrado){
+				$('p').slideDown('slow');
+				mostrado = false;
+			}else{
+				$('p').slideUp('slow');
+				mostrado = true;
+			}
+		});
+	})
+</script>
+<body>
+	<input type="button" name="boton" value="normal" id="normal">
+	<input type="button" name="botonrapido" value="rapido" id="rapido">
+	<input type="button" name="botonlento" value="lento" id="lento">
+	<input type="button" name="fade" value="fade" id="fade">
+	<input type="button" name="slide" value="slide" id="slide">
+	<p>Estoy para que me animen</p>
+	<p>Estoy para que me animen</p>
+</body>
+</html>

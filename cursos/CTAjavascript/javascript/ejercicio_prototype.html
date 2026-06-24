@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio de prototype</title>
+</head>
+<body>
+	<script>
+		function Hotel(n,h,r){
+		  this.nombre = n;
+		  this.hab = h;
+		  this.reserv = r;
+		};
+		
+		Hotel.prototype.verDisp = function(){
+			return this.hab - this.reserv;
+		};
+		Hotel.prototype.reservar = function(num){
+		  if ( (this.reserv + num) < this.hab ){
+		  	console.log(num + " habitaciones reservadas");
+		    this.reserv += num;
+		  }
+		  else{
+		  	console.log("No hay habitaciones suficientes");
+		  }
+		};
+		
+		var h1 = new Hotel("sol",10,7);
+		
+		
+		console.log(h1.nombre + " tiene disponibles " + h1.verDisp());
+		h1.reservar(2);
+		console.log(h1.nombre + " tiene disponibles " + h1.verDisp());
+		h1.reservar(2);
+	</script>
+</body>
+</html>

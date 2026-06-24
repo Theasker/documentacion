@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Multimedia</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    
+    <script>
+      $(document).ready(function(){
+        $('#full').on('click',function(){
+          var video = $('#video');
+
+          if(video[0].requestFullScreen){
+            video[0].requestFullScreen();
+          }else if(video[0].webkitRequestFullScreen){
+            video[0].webkitRequestFullScreen();
+          }else if(video[0].mozRequestFullScreen){
+            video[0].mozRequestFullScreen
+          }
+        });
+
+      });
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+          <video id="video" poster="../html_css/images/luna_de_colores.jpg" controls >
+            <source src="http://download.wavetlan.com/SVV/Media/HTTP/H264/Other_Media/H264_test5_voice_mp4_480x360.mp4" type="video/mp4">
+              
+            </source>            
+          </video>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+          <button id="full"><span class="glyphicon glyphicon-fullscreen"></span></button>
+        </div>
+      </div>
+
+    </div>
+  </body>
+
+</html>

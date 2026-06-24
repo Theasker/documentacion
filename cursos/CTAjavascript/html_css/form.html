@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1.0">
+	<title>Ejemplo de formulario</title>
+</head>
+<body>
+	<fieldset>
+		<legend>Datos Conexión</legend>
+		<label>nombre usuario</label><br />
+		<input type="text" value="">
+		<br /><br />
+	</fieldset>
+	<fieldset>
+		<legend>Datos Personales</legend>
+		<label for="checkbox">Gustos</label><br />
+		<input type="checkbox" value="deporte"> deporte<br />
+		<input type="checkbox" value="ciencia"> ciencia<br />
+		<input type="checkbox" value="libros"> libros<br />
+		<br />
+		<label>Sexo</label><br />
+		<input type="radio" name="sexo" value="hombre"> <label>hombre</label><br />
+		<input type="radio" name="sexo" value="mujer"> <label>mujer</label>
+		<br /><br />
+		<label>Estudios</label><br />
+		<select name="elige una opcion">
+			<option value="Sin Estudios">Sin Estudios</option>
+			<option value="Primarios">Primarios</option>
+			<option value="Universitarios">Universitarios</option>
+		</select>
+		<br /><br />
+		<label>Comentarios</label><br />
+		<textarea rows="10" cols="20" placeholder="Dejar comentarios"></textarea>
+		<br /><br />
+		<label>Telefono</label><br />
+		<input type="tel">
+		<br /><br />
+	</fieldset>
+	<br />
+	<input type="submit" name="submit" value="submit">
+	<input type="reset" name="reset" value="limpiar datos">
+</body>
+</html>

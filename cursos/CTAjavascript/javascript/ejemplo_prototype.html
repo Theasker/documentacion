@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ejemplo de prototype</title>
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/default.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
+	<script>
+		function Punto(inicio){
+		 	this.x = inicio || 10;
+		}
+		Punto.prototype.pintar = function(){
+			return this.x;
+		};
+		
+		Punto.prototype.mover = function(pos){
+			this.x = this.x + pos;
+		};
+		
+		var p1 = new Punto();
+		var p2 = new Punto(7);
+		
+		p1.mover(3);
+		p2.mover(1);
+		console.log("p1 - X: " + p1.pintar());
+		console.log("p2 - X: " + p2.pintar());
+		
+		function Punto2D(ix,iy){
+			Punto.call(this,ix);
+		  this.y = iy || 5;
+		}
+		
+		Punto2D.prototype = Object.create(Punto.prototype);
+		Punto2D.prototype.pintarY = function(){
+			return this.y;
+		}
+		
+		p3 = new Punto2D(23,25);
+		console.log("p3 - X: " + p3.pintar());
+		console.log("p3 - Y: " + p3.pintarY());
+		
+		console.log("p3 es de tipo: " + typeof p3);
+		var soyPunto = p3 instanceof Punto;
+		var soyPunto2d = p3 instanceof Punto2D;
+		console.log("p3 es de Punto: " + soyPunto);
+		console.log("p3 es de Punto2D: " + soyPunto2d);
+	</script>
+	<script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+	<pre><code class="javascript">
+			function Punto(inicio){
+			 	this.x = inicio || 10;
+			}
+			Punto.prototype.pintar = function(){
+				return this.x;
+			};
+			
+			Punto.prototype.mover = function(pos){
+				this.x = this.x + pos;
+			};
+			
+			var p1 = new Punto();
+			var p2 = new Punto(7);
+			
+			p1.mover(3);
+			p2.mover(1);
+			console.log("p1 - X: " + p1.pintar());
+			console.log("p2 - X: " + p2.pintar());
+			
+			function Punto2D(ix,iy){
+				Punto.call(this,ix);
+			  this.y = iy || 5;
+			}
+			
+			Punto2D.prototype = Object.create(Punto.prototype);
+			Punto2D.prototype.pintarY = function(){
+				return this.y;
+			}
+			
+			p3 = new Punto2D(23,25);
+			console.log("p3 - X: " + p3.pintar());
+			console.log("p3 - Y: " + p3.pintarY());
+			
+			console.log("p3 es de tipo: " + typeof p3);
+			var soyPunto = p3 instanceof Punto;
+			var soyPunto2d = p3 instanceof Punto2D;
+			console.log("p3 es de Punto: " + soyPunto);
+			console.log("p3 es de Punto2D: " + soyPunto2d);
+	</code></pre>
+	
+</body>
+</html>

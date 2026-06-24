@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Menu desplegable</title>
+	<script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+	<style>
+		* {
+			/*
+				padding y border se aplicara dentro de las medidas width y height.
+				asi dos elementos con el mismo ancho y alto 
+				pero diferentes separaciones serán del mismo tamaño
+			*/
+			margin: 0%;
+			padding: 0%;
+			-moz-box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+		ul{display: inline-block;padding-right: 15px;}
+		h3{
+			background-color: black;
+	    color: white;
+	    padding: 10px 20px;
+	    text-decoration: none;
+	    border-radius: 4px 4px 0 0;
+		}
+		h3:hover {
+			background-color: orange;
+		}
+		li:hover {
+			background-color: black;
+			color: orange;
+		}
+		li{list-style:none;background-color: orange;}
+	</style>
+	<script>
+		$(document).ready(function(){
+			$('li').css({'visibility': 'hidden'});
+
+			$('h3').on('mouseover',function(){
+				var id = $(this).attr("id");
+				$('li#'+id).css({'visibility': 'visible'});
+			});
+
+			$('ul').on('mouseleave',function(){
+				var id = $(this).attr("id");
+				$('li#'+id).css({'visibility': 'hidden'});
+			});
+
+		})
+	</script>
+</head>
+<body>
+	<ul id="uno">
+		<h3 id="uno">Menu uno</h3>
+		<li id="uno">Enlace 1</li>
+		<li id="uno">Enlace 2</li>
+		<li id="uno">Enlace 3</li>
+		<li id="uno">Enlace 4</li>
+	</ul>
+	<ul id="dos">
+		<h3 id="dos">Menu dos</h3>
+		<li id="dos">Enlace 5</li>
+		<li id="dos">Enlace 6</li>
+		<li id="dos">Enlace 7</li>
+		<li id="dos">Enlace 8</li>
+	</ul>
+	<ul id="tres">
+		<h3 id="tres">Menu tres</h3>
+		<li id="tres">Enlace 9</li>
+		<li id="tres">Enlace 10</li>
+		<li id="tres">Enlace 11</li>
+		<li id="tres">Enlace 12</li>
+	</ul>
+	<ul id="cuatro">
+		<h3 id="cuatro">Menu cuatro</h3>
+		<li id="cuatro">Enlace 13</li>
+		<li id="cuatro">Enlace 14</li>
+		<li id="cuatro">Enlace 15</li>
+		<li id="cuatro">Enlace 16</li>
+	</ul>
+	<ul id="cinco">
+		<h3 id="cinco">Menu cinco</h3>
+		<li id="cinco">Enlace 17</li>
+		<li id="cinco">Enlace 18</li>
+		<li id="cinco">Enlace 19</li>
+		<li id="cinco">Enlace 20</li>
+	</ul>
+</body>
+</html>

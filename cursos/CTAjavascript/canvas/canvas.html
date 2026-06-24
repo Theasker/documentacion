@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Canvas</title>
+	<style>
+		canvas{border: 1px solid black;}
+	</style>
+	<script>
+		window.onload = function(){
+			var elemento = document.getElementById('lienzo1');
+			var miLienzo1 = elemento.getContext('2d');
+			// Dibujar un cuadrado relleno 
+			miLienzo1.fillRect(0,0,80,40);
+			// Dibujar el contorno de un cuadrado
+			miLienzo1.strokeRect(85,1,80,40);
+			// Borrador
+			miLienzo1.clearRect(40,5,80,40);
+			// transparencias
+			miLienzo1.globalAlpha = 0.8;
+			miLienzo1.strokeStyle = "blue";
+			miLienzo1.strokeRect(5,45,80,40);
+			miLienzo1.fillStyle = "darkRed";
+			miLienzo1.fillRect(7,47,77,37);
+			
+			var elemento2 = document.getElementById('lienzo2');
+			var miLienzo2 = elemento2.getContext('2d');
+			//Gradientes
+			var gl = miLienzo2.createLinearGradient(0,1,99,1);
+			gl.addColorStop(0.25,"darkOrange");
+			gl.addColorStop(0.75,"darkRed");
+			gl.addColorStop(0.40,"lightGreen");
+			miLienzo2.fillStyle = gl;
+			miLienzo2.fillRect(1,1,100,100);
+
+			var gr = miLienzo2.createRadialGradient(100,100,100,150,200,200);
+			gr.addColorStop(0.5,'orange');
+			gr.addColorStop(1,"red");
+			miLienzo2.fillStyle = gr;
+			miLienzo2.fillRect(100,100,100,100);
+			
+			// Pintar con un lapiz
+			miLienzo2.fillStyle = "black";
+			miLienzo2.strokeStyle = "black";
+			miLienzo2.beginPath(); // Posicionamos el lapiz
+			miLienzo2.moveTo(150,10);
+			// Creamos un cuadrado
+			miLienzo2.lineTo(150,60);
+			miLienzo2.lineTo(200,60);
+			miLienzo2.lineTo(200,10);
+			miLienzo2.lineTo(150,10);
+			miLienzo2.fill();
+			miLienzo2.closePath(); // dejamos el lápiz
+
+			// Dibujamos un 
+			miLienzo2.beginPath(); // Posicionamos el lapiz
+			// Creamos un cuadrado
+			miLienzo2.arc(150,100,30,Math.PI,Math.PI*2,true);
+			miLienzo2.fill();
+			miLienzo2.closePath(); // dejamos el lápiz
+
+			// Dibujar un tablero de 3 en raya
+			var elemento3 = document.getElementById('lienzo3');
+			var miLienzo3 = elemento3.getContext('2d');
+			miLienzo3.beginPath();
+			// lineas horizontales y verticales
+			for (x=5;x<=65;x=x+20){
+				miLienzo3.moveTo(x,5);
+				miLienzo3.lineTo(x,65);
+				miLienzo3.moveTo(5,x);
+				miLienzo3.lineTo(65,x);
+			}
+			miLienzo3.closePath();
+			miLienzo3.stroke();
+
+			// Dibujamos un tabler
+
+			// Trabajar con texto y subrayarlo
+			miLienzo3.beginPath();
+			miLienzo3.strokeStyle="darkOrange";
+			miLienzo3.lineWidth=20;
+			miLienzo3.lineCap="round"; // linea con redondeo en el extremo
+			miLienzo3.moveTo(25,100);
+			miLienzo3.lineTo(90,100);
+			
+			miLienzo3.stroke();
+			miLienzo3.font="15px Verdana";
+			miLienzo3.textAlign="start";
+			miLienzo3.textBaseline="button";
+			miLienzo3.fillText("mi texto",25,105);
+			miLienzo3.closePath();
+
+			// Insertamos una imagen
+			var elemento4 = document.getElementById('lienzo4');
+			var miLienzo4 = elemento4.getContext('2d');
+			var imagen = new Image();
+			imagen.src = '../html_css/images/luna_de_colores.jpg';
+			imagen.onload = function(){
+				// empieza en 1.1 y acaba en 100.22
+				miLienzo4.drawImage(imagen,10,10,150,150);
+			};
+		}		
+	</script>
+</head>
+<body>
+	<section id="cajalienzo1" syle="display:inline-block">
+		<canvas id="lienzo1" width="300" height="200"></canvas>
+		<canvas id="lienzo2" width="300" height="200"></canvas>
+		<canvas id="lienzo3" width="300" height="200"></canvas>
+		<canvas id="lienzo4" width="300" height="200"></canvas>
+	</section>
+	
+</body>
+</html>

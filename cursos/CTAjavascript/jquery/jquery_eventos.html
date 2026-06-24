@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width initial-scale=1.0">
+	<title>Eventos en JQuery</title>
+	<script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+	<style>
+		.foco{border: 3px solid DarkOrange;}
+	</style>
+	<script>
+		$(document).ready(function(){
+			// al puslar el botón, pongo texto de <a> de color Gris
+			$('input#boton1').on("mousedown",function(){
+				$('a#enlace1').css({'color': 'DarkGrey'})
+			});
+			// al soltar el boton, pongo texto de <a> de color naranja
+			$('input#boton1').on("mouseup",function(){
+				$('a#enlace1').css({'color': 'DarkOrange'})
+			});
+			// EVENTOS DE RATON
+			// al pulsar boton, pongo texto de <a> de color rojo
+			// al soltar el boton, deja el texto de <a> de color rojo
+			// tendrá prioridad sobre el envento mouseup
+			$('input#boton1').on("click",function(){
+				$('a#enlace1').css({'color': 'red'})
+			});
+			// al pulsar 2 veces, pongo texto de <a> de color verde
+			$('input#boton1').on("dblclick",function(){
+				$('a#enlace1').css({'color': 'Green'})
+			});
+			// VARIOS EVENTOS SOBRE EL MISMO SELECTOR
+			$('input#boton1').on("click mouseup",function(){
+				$('a#enlace1').css({'color': 'Red'})
+			});
+			// al poner el ratón encima de <a> aplicamos letra de texto
+			$('a#enlace1').on("mouseenter",function(){
+				$(this).css({
+					'color':$(this).css('color'),
+					'font-size': '26px'
+				});
+			});
+			// al salir el raton de encima de <a> reducimos letra del texto
+			$('a#enlace1').on("mouseleave",function(){
+				$(this).css({
+					'color':$(this).css('color'),
+					'font-size': '16px'
+				});
+			});
+			// COMPARTIR SELECTOR
+			// Sumular hover, haciendo lo mismo con el tamaño de letra
+			$('a#enlace1').on({
+				'mouseenter': function(){
+					$(this).css({
+						'color': $(this).css('color'),
+						'font-size': '26px'
+					})
+				},
+				'mouseleave': function(){
+					$(this).css({
+						'color': $(this).css('color'),
+						'font-size': '16px'
+					})
+				}
+			});
+			// EVENTOS COMBINADOS TECLADO-RATON
+			// al coger foco añadir clase foco
+			$('a')on({
+				'focus': function(){
+					$(this).addClass('foco');
+				},
+				'blur': function(){
+					$(this).removeClass('foco');
+				}
+			})
+		});
+	</script>
+</head>
+<body>
+	<input type="button" id="boton1" value="boton">
+	<a href="#" id="enlace1">Se prueban sobre mi los eventos</a>
+</body>
+</html>

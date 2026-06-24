@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>ejercicio de animaciones en css3</title>
+	<!-- 
+		Página HTML que contenga:
+		➔ Una imagen:
+		 Al poner el ratón encima “SALTE”
+		➔ Un parrafo:
+		 Al poner el ratón encima pase por varios colores 
+	-->
+	<style>
+		
+		p{ 
+			width: 200px; 
+			height: 50px; 
+			border: 1px; 
+			margin: 0 auto;
+			background-color: orange;
+		}
+
+		p:hover{
+			color: green;
+			animation-name: colores;
+			animation-duration: 10s;
+			animation-timing-function: ease-in-out;
+			animation-iteration-count: 2;
+		}
+
+		@keyframes colores {
+			0% { transform: color(green); }
+			20% {	transform: color(green); }
+			40% {	transform: color(green); }
+			60% {	transform: color(green); }
+			80% {	transform: color(green); }
+			100% {	transform: color(green); }
+		}
+		img{ width: 100px; margin: 0 auto;}
+		img:hover{
+			width: 200px;
+			animation-name: saltito;
+			animation-duration: 10s;
+			animation-timing-function: ease-in-out;
+			animation-iteration-count: 2;
+		}
+
+		@keyframes saltito{
+			0% { transform: translate(0px,0px) }
+			10% { transform: translate(5px,0px) }
+			20% { transform: translate(10px,0px) }
+			30% { transform: translate(5px,0px) }
+			40% { transform: translate(10px,0px) }
+			50% { transform: translate(0px,0px) }
+			60% { transform: translate(0px,0px) }
+			70% { transform: translate(0px,0px) }
+			80% { transform: translate(0px,0px) }
+			90% { transform: translate(0px,0px) }
+			100% { transform: translate(0px,0px) }
+		}
+
+		
+
+		
+	</style>
+</head>
+<body>
+	<img src="./images/iconos/flower.gif" alt="" class="flor">
+	
+	<p class="parrafo">Párrafo</p>
+</body>
+</html>
