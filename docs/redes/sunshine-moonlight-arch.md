@@ -26,7 +26,6 @@
 
 - Drivers NVIDIA propietarios instalados (`nvidia`, `nvidia-utils`)
 - Entorno de escritorio para el usuario jugador (XFCE, KDE, Openbox…)
-- Red local: WiFi 5 GHz o cable Ethernet (recomendado)
 
 Verificar que los drivers están activos:
 
@@ -152,26 +151,32 @@ Contenido:
 
 ```
 Section "Device"
-    Identifier  "Dummy"
+    Identifier  "DummyDevice"
     Driver      "dummy"
     VideoRam    256000
 EndSection
 
 Section "Monitor"
-    Identifier  "Monitor0"
+    Identifier  "DummyMonitor"
     HorizSync   28-80
     VertRefresh 48-75
+    Modeline "1920x1080" 173.00 1920 2048 2248 2576 1080 1083 1088 1120
 EndSection
 
 Section "Screen"
-    Identifier  "Screen0"
-    Device      "Dummy"
-    Monitor     "Monitor0"
+    Identifier  "DummyScreen"
+    Device      "DummyDevice"
+    Monitor     "DummyMonitor"
     DefaultDepth 24
     SubSection "Display"
-        Depth  24
-        Modes  "1920x1080"
+        Depth   24
+        Modes   "1920x1080"
     EndSubSection
+EndSection
+
+Section "ServerLayout"
+    Identifier  "DummyLayout"
+    Screen      "DummyScreen"
 EndSection
 ```
 
