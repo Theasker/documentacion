@@ -24,97 +24,6 @@
 
       * **images**
 
-  * **cursos**
-
-    * **CTAjava**
-      * [certificacion.md](./docs/cursos/CTAjava/certificacion.md)
-      * [java.md](./docs/cursos/CTAjava/java.md)
-
-    * **CTAjavascript**
-      * [cursojavascript](./docs/cursos/CTAjavascript/README.md)
-      * [Programación avanzada de aplicaciones para dispositivos móviles en HTML5 con Javascrip y CSS3](./docs/cursos/CTAjavascript/cursoHtml5Javscript.md)
-
-      * **bootstrap**
-
-      * **canvas**
-
-      * **geolocalizacion**
-
-      * **html_css**
-
-      * **javascript**
-
-      * **jquery**
-
-      * **multimedia**
-
-      * **webstorage**
-
-    * **OpenShift en AWS**
-      * [OpenShift en AWS](./docs/cursos/OpenShift en AWS/OpenShift en AWS.md)
-
-    * **Virtualizacion_linux**
-      * [Curso virtualización Linux](./docs/cursos/Virtualizacion_linux/README.md)
-      * [urls.md](./docs/cursos/Virtualizacion_linux/urls.md)
-
-      * **modulo1**
-        * [Introducción a libvirt](./docs/cursos/Virtualizacion_linux/modulo1/libvirt.md)
-        * [Introducción a LXC](./docs/cursos/Virtualizacion_linux/modulo1/lxc.md)
-        * [Introducción a QEMU/KVM](./docs/cursos/Virtualizacion_linux/modulo1/qemu-kvm.md)
-        * [Tipos de virtualización](./docs/cursos/Virtualizacion_linux/modulo1/tipos.md)
-        * [¿Qué es la virtualización?](./docs/cursos/Virtualizacion_linux/modulo1/virtualizacion.md)
-
-      * **modulo2**
-        * [Preparación del escenario de instalación](./docs/cursos/Virtualizacion_linux/modulo2/escenario.md)
-        * [Instalación de QEMU/KVM + libvirt](./docs/cursos/Virtualizacion_linux/modulo2/instalacion.md)
-        * [Conexión remota a libvirt](./docs/cursos/Virtualizacion_linux/modulo2/remoto.md)
-        * [Conexión local no privilegiada a libvirt](./docs/cursos/Virtualizacion_linux/modulo2/session.md)
-        * [Conexión local privilegiada a libvirt](./docs/cursos/Virtualizacion_linux/modulo2/system.md)
-
-      * **modulo3**
-        * [Características de las máquinas virtuales](./docs/cursos/Virtualizacion_linux/modulo3/caracteristicas.md)
-        * [Gestión de máquinas virtuales con virsh](./docs/cursos/Virtualizacion_linux/modulo3/gestion.md)
-        * [Modificación de la definición de una máquina virtual](./docs/cursos/Virtualizacion_linux/modulo3/modificacion.md)
-        * [Creación de máquinas virtuales con virt-install](./docs/cursos/Virtualizacion_linux/modulo3/virt-install.md)
-        * [Definición XML de una máquina virtual](./docs/cursos/Virtualizacion_linux/modulo3/xml.md)
-
-      * **modulo4**
-        * [Detalles de las máquinas virtuales](./docs/cursos/Virtualizacion_linux/modulo4/detalles.md)
-        * [Gestión de máquinas virtuales](./docs/cursos/Virtualizacion_linux/modulo4/gestion.md)
-        * [Primeros pasos con virt-manager](./docs/cursos/Virtualizacion_linux/modulo4/instalacion.md)
-        * [Creación de máquinas virtuales Linux](./docs/cursos/Virtualizacion_linux/modulo4/linux.md)
-        * [Creación de máquinas virtuales Windows](./docs/cursos/Virtualizacion_linux/modulo4/windows.md)
-
-      * **modulo5**
-        * [Introducción al almacenamiento en QEMU/KVM + libvirt](./docs/cursos/Virtualizacion_linux/modulo5/introduccion.md)
-        * [Gestión de Pools de Almacenamiento](./docs/cursos/Virtualizacion_linux/modulo5/pool.md)
-        * [Trabajar con volúmenes en las máquinas virtuales](./docs/cursos/Virtualizacion_linux/modulo5/volumen-vm.md)
-        * [Gestión de volúmenes de almacenamiento con libvirt](./docs/cursos/Virtualizacion_linux/modulo5/volumen1.md)
-        * [Gestión de volúmenes de almacenamiento con herramientas específicas](./docs/cursos/Virtualizacion_linux/modulo5/volumen2.md)
-
-      * **modulo6**
-        * [Clonación de máquinas virtuales](./docs/cursos/Virtualizacion_linux/modulo6/clonacion.md)
-        * [Clonación completa a partir de plantillas](./docs/cursos/Virtualizacion_linux/modulo6/completa.md)
-        * [Clonación enlazada a partir de plantillas](./docs/cursos/Virtualizacion_linux/modulo6/ligera.md)
-        * [Instantáneas de máquinas virtuales](./docs/cursos/Virtualizacion_linux/modulo6/snapshot.md)
-        * [Plantillas de máquinas virtuales](./docs/cursos/Virtualizacion_linux/modulo6/template.md)
-
-      * **modulo7**
-        * [Creación de un Puente Externo con Linux Bridge](./docs/cursos/Virtualizacion_linux/modulo7/bridge.md)
-        * [Configuración de red en las máquinas virtuales](./docs/cursos/Virtualizacion_linux/modulo7/configuracion.md)
-        * [Definición de Redes Virtuales (Privadas) en libvirt](./docs/cursos/Virtualizacion_linux/modulo7/definicion.md)
-        * [Introducción a la gestión de redes en QEMU/KVM + libvirt](./docs/cursos/Virtualizacion_linux/modulo7/introduccion.md)
-        * [Gestión de Redes Puentes (Públicas)](./docs/cursos/Virtualizacion_linux/modulo7/puentes.md)
-        * [Gestión de Redes Virtuales](./docs/cursos/Virtualizacion_linux/modulo7/virtuales.md)
-
-      * **modulo8**
-        * [Almacenamiento en LXC](./docs/cursos/Virtualizacion_linux/modulo8/almacenamiento.md)
-        * [Configuración de contenedores LXC](./docs/cursos/Virtualizacion_linux/modulo8/configuracion.md)
-        * [Creación y gestión de contenedores LXC](./docs/cursos/Virtualizacion_linux/modulo8/creacion.md)
-        * [Introducción a Linux Containers (LXC)](./docs/cursos/Virtualizacion_linux/modulo8/introduccion.md)
-        * [Introducción a LXD](./docs/cursos/Virtualizacion_linux/modulo8/lxd.md)
-        * [Redes en LXC](./docs/cursos/Virtualizacion_linux/modulo8/redes.md)
-
   * **edición**
     * [varioesEdicion.md](./docs/edición/varioesEdicion.md)
 
@@ -173,6 +82,11 @@
       * **awesome-blender**
         * [About List](./docs/multimedia/Blender/awesome-blender/CONTRIBUTING.md)
         * [README.md](./docs/multimedia/Blender/awesome-blender/README.md)
+
+  * **porgramacion**
+
+    * **vscode**
+      * [Guía de Uso de VS Code REST Client](./docs/porgramacion/vscode/restclient.md)
 
   * **programacion**
     * [VScode.md](./docs/programacion/VScode.md)
