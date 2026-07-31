@@ -1,3 +1,6 @@
+# Vocabulario
+#ingles
+
 very easy, effortless
 very hard, difficult
 very noisy, deafening

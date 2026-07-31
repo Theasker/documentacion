@@ -5,7 +5,7 @@ Crea un tunel en tu máquina que te genera una URL para que puedas acceder aun s
 
 * Primero tendremos que registrarnos en su página https://ngrok.com/
 * Luego descargar y descomprimir el binario ejecutable
-* [Opcional] Podemos agregarlo a un lugar que esté en nuestro $PATH en nuestro `~/.bashrc`
+* Podemos agregarlo a un lugar que esté en nuestro $PATH en nuestro `~/.bashrc`(opcional)
 * Ir a la página donde tenemos nuestro token de autorización y copiarlo en https://dashboard.ngrok.com/get-started/your-authtoken.
 * Luego ejecutar el comando:  
 `ngrok config add-authtoken <TOKEN>`

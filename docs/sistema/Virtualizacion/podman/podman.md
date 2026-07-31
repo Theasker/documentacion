@@ -1,0 +1,14 @@
+# Podman
+#sistema
+
+## Instalación
+>  **referencia:** [Instalación de podman - Atereao](https://atareao.es/tutorial/podman/como-instalar-podman/)
+
+Instalamos con `pacman -S podman`
+
+
+
+## Bibliografía
+* [Tutorial Podeman - Atareao](https://atareao.es/tutorial/podman/)
+* https://ipv6.rs/tutorial/Arch_Linux/Podman/
+* https://agustinwawrzyk.medium.com/ejecutando-oracle-database-23c-free-release-en-docker-2934c7a7baba

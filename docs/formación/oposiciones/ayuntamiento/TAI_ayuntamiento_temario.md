@@ -1,4 +1,6 @@
 # TÉCNICA/O AUXILIAR INFORMATICO.
+#Opciones
+
 
 ## Parte primera
 * TEMA 1. La Constitución: antecedentes, estructura y contenido. Principios constitucionales y valores fundamentales. Título preliminar.

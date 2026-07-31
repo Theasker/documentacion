@@ -1,5 +1,7 @@
 # Uso de Vim
 
+#edición
+
 Tutorial al ejecutar "vimtutor es"
 
 - [Uso de Vim](#uso-de-vim)

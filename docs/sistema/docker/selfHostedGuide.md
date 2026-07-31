@@ -7116,11 +7116,6 @@ commercially available industrial robot models that you can import, visualize, a
 
 [REST-assured](https://github.com/rest-assured/rest-assured) is a Java DSL for easy testing of REST services.
 
-## Contribute
-
-- [x] If would you like to contribute to this guide simply make a [Pull Request](https://github.com/mikeroyal/Self-Hosting-Guide/pulls).
-
-
 ## License
 [Back to the Top](https://github.com/mikeroyal/Self-Hosting-Guide#table-of-contents)
 

@@ -1,5 +1,7 @@
 # Neovim - Nvim
 
+#edición
+
 ## 📝 Mi Cheat Sheet de Neovim (Nivel Inicial)
 
 **1. Movimiento (Modo Normal)**
