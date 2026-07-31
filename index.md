@@ -25,7 +25,7 @@
       * **images**
 
   * **edición**
-    * [varioesEdicion.md](./docs/edición/varioesEdicion.md)
+    * [Edición varios](./docs/edición/varioesEdicion.md)
 
     * **markdown**
       * [markdown-es.md](./docs/edición/markdown/markdown-es.md)
@@ -38,7 +38,7 @@
   * **formación**
 
     * **english**
-      * [english.md](./docs/formación/english/english.md)
+      * [Vocabulario](./docs/formación/english/english.md)
 
     * **oposiciones**
 
@@ -155,8 +155,6 @@
       * **laravel**
         * [Laravel](./docs/programacion/php/laravel/laravel.md)
 
-      * **mvc**
-
     * **python**
       * [Entornos virtuales en Python](./docs/programacion/python/EntornosVirtuales.md)
       * [FastAPI](./docs/programacion/python/FastAPI.md)
@@ -258,19 +256,12 @@
         * [pihole.md](./docs/sistema/Virtualizacion/Docker/pihole.md)
         * [Docker selfhosted](./docs/sistema/Virtualizacion/Docker/selfHostedWithDocker.md)
 
-      * **Qemu - virt-manager**
-        * [Emular raspberry PI con qemu](./docs/sistema/Virtualizacion/Qemu - virt-manager/emular_raspberryPi.md)
-        * [Qemu](./docs/sistema/Virtualizacion/Qemu - virt-manager/qemu.md)
-        * [Scripts de ejemplo de máquina virtual para redireccionamiento de puertos USB](./docs/sistema/Virtualizacion/Qemu - virt-manager/qemu_usb_redirect.md)
-        * [Proyecto: Laboratorio de Windows Virtualizados en Arch Linux](./docs/sistema/Virtualizacion/Qemu - virt-manager/sistema Windows.md)
-
       * **kubernetes**
         * [Erase una vez kubernetes](./docs/sistema/Virtualizacion/kubernetes/erase-una-ver-kubernetes.md)
         * [Kubernetes](./docs/sistema/Virtualizacion/kubernetes/kubernetes.md)
 
       * **podman**
-        * [Podman](./docs/sistema/Virtualizacion/podman/podman .md)
-        * [Podman Installation on Ubuntu 20.04 WSL2](./docs/sistema/Virtualizacion/podman/podman_wsl.md)
+        * [Podman](./docs/sistema/Virtualizacion/podman/podman.md)
 
     * **archLinux**
       * [Instalaciones del sistema](./docs/sistema/archLinux/instalaciones.md)
