@@ -1,0 +1,27 @@
+{
+  "ok": true,
+  "result": [
+    {
+      "update_id": 611009099,
+      "message": {
+        "message_id": 1,
+        "from": {
+          "id": 8310736,
+          "is_bot": false,
+          "first_name": "Mauri",
+          "username": "Theasker",
+          "language_code": "es"
+        },
+        "chat": {
+          "id": 8310736,
+          "first_name": "Mauri",
+          "username": "Theasker",
+          "type": "private"
+        },
+        "date": 1580374027,
+        "text": "/start",
+        "entities": [{ "offset": 0, "length": 6, "type": "bot_command" }]
+      }
+    }
+  ]
+}

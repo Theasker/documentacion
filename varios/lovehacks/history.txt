@@ -1,0 +1,46 @@
+   47  php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+   48  php -r "if (hash_file('SHA384', 'composer-setup.php') === 'aa96f26c2b67226a324c27919f1eb05f21c248b987e6195cad9690d5c1ff713d53020a02ac8c217dbf90a7eacc9d141d') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;
+   49  "
+   50  php composer-setup.php
+   51  php -r "unlink('composer-setup.php');"
+   52  ls
+   53  mv composer.phar /usr/local/bin/composer
+   54* -
+   55  composer
+   56  unzip phaser_tutorial_02.zip 
+   57  cd /etc/
+   58  ls
+   59  cd apache2/
+   60  ls
+   61  cd sites-available/
+   62  ls
+   63* 
+   64  nano default-ssl.conf 
+   65  nano 000-default.conf 
+   66  firefox
+   67  cd www/
+   68  ls
+   69  composer create-proyect symfony/framework-standard-edition symfony
+   70  composer create-project symfony/framework-standard-edition symfony
+   71  pwd
+   72  cd administracion/
+   73  composer install
+   74  ls -la
+   75  composer install
+   76  php bin/console doctrine:schema:create
+   77  git checkout develop
+   78* 
+   79  php bin/console doctrine:schema:update
+   80  composer update
+   81  php bin/console doctrine:schema:update
+   82  php bin/console doctrine:schema:install
+   83  php bin/console doctrine:schema:create
+   84  php bin/console doctrine:schema:update
+   85  php bin/console doctrine:schema:update --force
+   86  php bin/console doctrine:fixtures:load
+   87  nano ./var/logs/dev.log 
+   88  history 
+   89  cd 
+   90  ls
+   91  cd /tmp/tmp/
+   92  history >history.txt
