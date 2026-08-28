@@ -25,7 +25,7 @@
       * **images**
 
   * **edición**
-    * [varioesEdicion.md](./docs/edición/varioesEdicion.md)
+    * [Edición varios](./docs/edición/varioesEdicion.md)
 
     * **markdown**
       * [markdown-es.md](./docs/edición/markdown/markdown-es.md)
@@ -38,7 +38,7 @@
   * **formación**
 
     * **english**
-      * [english.md](./docs/formación/english/english.md)
+      * [Vocabulario](./docs/formación/english/english.md)
 
     * **oposiciones**
 
@@ -61,6 +61,12 @@
     * [VPSs con plan gratuito](./docs/internet/VPS.md)
     * [varios.md](./docs/internet/varios.md)
     * [VPSs con plan gratuito](./docs/internet/vps.md)
+    * [Pendiente por ver](./docs/internet/youtube.md)
+
+    * **silverbullet**
+      * [Playground Lua](./docs/internet/silverbullet/Playground lua.md)
+      * [manual_silverbullet.md](./docs/internet/silverbullet/manual_silverbullet.md)
+      * [Atajos de Teclado de SilverBullet](./docs/internet/silverbullet/shortcuts.md)
 
   * **movil**
     * [Termux](./docs/movil/termux.md)
@@ -155,8 +161,6 @@
       * **laravel**
         * [Laravel](./docs/programacion/php/laravel/laravel.md)
 
-      * **mvc**
-
     * **python**
       * [Entornos virtuales en Python](./docs/programacion/python/EntornosVirtuales.md)
       * [FastAPI](./docs/programacion/python/FastAPI.md)
@@ -172,6 +176,9 @@
     * **snippets**
 
       * **javascript**
+
+    * **vscode**
+      * [Guía de Uso de VS Code REST Client](./docs/programacion/vscode/restclient.md)
 
     * **wordpress**
       * [Cómo crear tema en Wordpress](./docs/programacion/wordpress/crearTemas.md)
@@ -214,6 +221,7 @@
   * **sistema**
     * [Kitty](./docs/sistema/Kitty.md)
     * [VPS.md](./docs/sistema/VPS.md)
+    * [Guía Completa: Aislamiento y Sandboxing con Contenedores de systemd (`systemd-nspawn`)](./docs/sistema/contenedores_systemd.md)
     * [MANUAL TÉCNICO: ARRANQUE DE ISOs DESDE GRUB (LOOPBACK)](./docs/sistema/grub_iso.md)
     * [Hard Links](./docs/sistema/hard_links.md)
     * [mac_de_dispositivos.md](./docs/sistema/mac_de_dispositivos.md)
@@ -224,6 +232,7 @@
     * [Comando `sed`](./docs/sistema/sed.md)
     * [Instalar snap](./docs/sistema/snap.md)
     * [sshfs](./docs/sistema/sshfs.md)
+    * [Sunshine + Moonlight multiusuario en Linux (Xorg dummy + inputtino)](./docs/sistema/sunshine_moonlight.md)
     * [tmux](./docs/sistema/tmux.md)
     * [Tutorial de UFW (Uncomplicated Firewall)](./docs/sistema/ufw.md)
     * [Utilidades varias de Sistemas](./docs/sistema/variosSistema.md)
@@ -258,19 +267,12 @@
         * [pihole.md](./docs/sistema/Virtualizacion/Docker/pihole.md)
         * [Docker selfhosted](./docs/sistema/Virtualizacion/Docker/selfHostedWithDocker.md)
 
-      * **Qemu - virt-manager**
-        * [Emular raspberry PI con qemu](./docs/sistema/Virtualizacion/Qemu - virt-manager/emular_raspberryPi.md)
-        * [Qemu](./docs/sistema/Virtualizacion/Qemu - virt-manager/qemu.md)
-        * [Scripts de ejemplo de máquina virtual para redireccionamiento de puertos USB](./docs/sistema/Virtualizacion/Qemu - virt-manager/qemu_usb_redirect.md)
-        * [Proyecto: Laboratorio de Windows Virtualizados en Arch Linux](./docs/sistema/Virtualizacion/Qemu - virt-manager/sistema Windows.md)
-
       * **kubernetes**
         * [Erase una vez kubernetes](./docs/sistema/Virtualizacion/kubernetes/erase-una-ver-kubernetes.md)
         * [Kubernetes](./docs/sistema/Virtualizacion/kubernetes/kubernetes.md)
 
       * **podman**
-        * [Podman](./docs/sistema/Virtualizacion/podman/podman .md)
-        * [Podman Installation on Ubuntu 20.04 WSL2](./docs/sistema/Virtualizacion/podman/podman_wsl.md)
+        * [Podman](./docs/sistema/Virtualizacion/podman/podman.md)
 
     * **archLinux**
       * [Instalaciones del sistema](./docs/sistema/archLinux/instalaciones.md)
