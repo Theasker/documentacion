@@ -2,6 +2,7 @@ temp/**
 *.pdf
 .idea/**
 .vscode/**
+.silverbullet.auth.json
 
 # Node rules:
 ## Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
