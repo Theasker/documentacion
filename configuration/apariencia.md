@@ -9,29 +9,26 @@
 ```
 ## Tabla de contenidos
 
-
 ```space-style
-
-
-.sb-toc-summary {
+.sb-toc-summary p {
   background-color: blue important!;
 }
 
 .content {
-/*  background-color: #333333 ;*/
+  background-color: #333333 ;
   border: 1px solid darkgrey;
   border-radius: 15px;
-  padding: 0.0em 0.4em;
-  /*margin-right: 50px;*/
+  padding: 15px;
+  margin-right: 0px;
+  text-decoration: none;
 }
 
 .content a {
   color: darkgrey;
-  text-decoration: none;
 }
 
 .content a:hover {
-  color: white;
+  color: orange;
   text-decoration: none;
 }
 
@@ -72,7 +69,7 @@ html, html[data-theme="dark"] {
     padding-top: 0px !important;
     padding-bottom: 0px !important;
     margin: 0px !important;
-    display: flex;
+    /*display: flex;*/
     align-items: center;
 }
 
@@ -129,12 +126,12 @@ html, html[data-theme="dark"] {
 ```
 
 ```space-style
-.sb-h1 { color: #FF8C00; } /* Naranja */
-.sb-h2 { color: #FFB000; } /* Ámbar */
-.sb-h3 { color: #FFD54F; } /* Dorado */
-.sb-line-h4 { color: #8FBC8F !important; } /* Verde suave */
-.sb-line-h5 { color: #5E81AC !important; } /* Azul petróleo */
-.sb-line-h6 { color: #88C0D0 !important; } /* Azul claro */
+.sb-h1 { color: #FF8C00; font-size: 2em; } /* Naranja */
+.sb-h2 { color: #FFB000; font-size: 2em;} /* Ámbar */
+.sb-h3 { color: #FFD54F; font-size: 2em;} /* Dorado */
+.sb-line-h4 { color: #8FBC8F !important; font-size: 1.5em !important; } /* Verde suave */
+.sb-line-h5 { color: #5E81AC !important; font-size: 1.3em !important; } /* Azul petróleo */
+.sb-line-h6 { color: #88C0D0 !important; font-size: 1.2em !important; } /* Azul claro */
 ```
 
 ```space-style
@@ -144,21 +141,24 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Antonio', sans-serif !important;
   font-weight: bold !important;
   font-variant-ligatures: none; /* Avoid strange letter spacing */
-  color: var(--main-web-color) !important;
+  /*color: var(--main-web-color) !important;*/€
   font-size: 1.9em;
 }
 
 /* Heading prefixes */
 .sb-line-h1:before {
   content: "> ";
+  color: #FF8C00;
 }
 
 .sb-line-h2:before {
   content: ">> ";
+  color: #FFB000 ;
 }
 
 .sb-line-h3:before {
   content: ">>> ";
+  color: #FFD54F ;
 }
 
 .sb-line-h4:before {
@@ -197,7 +197,7 @@ bloque
 
 ## Botón
 
-${widgets.commandButton("Mostrar Fecha y Hora")}
+${widgets.commandButton("Theasker cmd: Mostrar Fecha y Hora")}
 
 ```space-style
 button{

@@ -75,7 +75,3 @@ actionButton.define {
 }
 ```
 
-```space-lua
--- managed-by: configuration-manager
-config.set("std.widgets.toc.enabled", true)
-```
