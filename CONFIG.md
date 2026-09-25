@@ -75,3 +75,15 @@ actionButton.define {
 }
 ```
 
+## Tabla de contenidos (desde SilverBullet 2.11)
+
+En 2.11 el índice de contenidos pasó a ser una *view* acoplable en vez de
+una decoración fija de la página. Esta configuración lo deja anclado en la
+parte superior de cada página y abierto por defecto, como antes.
+
+```space-lua
+config.set("view.defaults", {
+  ["std.toc"] = { dock = "page-top", open = true },
+})
+```
+

@@ -1,6 +1,6 @@
 # Neovim - Nvim
 
-#edición
+#edición #nvim #programacion
 
 ## 📝 Mi Cheat Sheet de Neovim (Nivel Inicial)
 
@@ -58,6 +58,7 @@ El fichero de configuración se situa en `~/.config/nvim/init.vim`
 En windows el directorio de configuración está en `C:\Users\mseguraa\AppData\Local\nvim`
 
 
+
 ## Bibliografía
 * Curso con Google AI Studio: https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221mQBQqALNyjh7WxBJ-X7e_65G4nkP5CBk%22%5D,%22action%22:%22open%22,%22userId%22:%22101341989967353463151%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing
 * https://h4ckseed.wordpress.com/2025/09/03/otra-neovim-configuration-init-vim/
@@ -67,6 +68,7 @@ En windows el directorio de configuración está en `C:\Users\mseguraa\AppData\L
 
 ### Cursos
 * CURSO DE NEOVIM - NVIM - Informatica Live: https://www.youtube.com/watch?v=gZUWWhE4ADU
+* [Gentleman Programming - NVIM Curso completo configuración 2025 en español](https://www.youtube.com/watch?v=C-qvOgIun5U)
 
 ### Configuraciones
 * https://vonheikemen.github.io/devlog/es/tools/build-your-first-lua-config-for-neovim/

@@ -10,34 +10,33 @@
 ## Tabla de contenidos
 
 ```space-style
-.sb-toc-summary p {
-  background-color: blue important!;
+/*
+.sb-page-widget-bar {
+  background-color: #FF8C00;
+  color: black;
 }
 
-.content {
-  background-color: #333333 ;
-  border: 1px solid darkgrey;
-  border-radius: 15px;
-  padding: 15px;
-  margin-right: 0px;
-  text-decoration: none;
+.sb-page-widget-bar button{
+  color: black;
+}
+*/
+
+.sb-page-widget-body {
+  background-color:  #333333;
 }
 
-.content a {
-  color: darkgrey;
-}
-
-.content a:hover {
+ul > li > div:hover {
   color: orange;
-  text-decoration: none;
 }
 
-div > .button-bar {
-  background-color: blue;
-  margin: 5px important!;
-  padding: 5px important!;
+.sb-page-widget-tree {
+  border: 1px solid darkgrey;
+  border-radius: 15px; /* Cambia el valor según el radio que prefieras */
+  overflow: hidden;    /* Asegura que los elementos hijos respeten el redondeo */
 }
 ```
+
+
 
 ## Cambios generales
 ```space-style
@@ -190,7 +189,7 @@ bloque
   background: #3c3c3c;
   border: 1px solid darkgrey;
   border-radius: 5px;
-  padding: 0.0em 0.4em;
+  padding: 0px 5px;
 }
 ```
 
