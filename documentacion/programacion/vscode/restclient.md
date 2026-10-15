@@ -150,3 +150,6 @@ Puedes ajustar el comportamiento del cliente mediante comentarios directivos jus
 # @no-cookie-jar
 GET {{baseUrl}}/legacy-redirect HTTP/1.1
 ```
+
+## Bibliografía
+* [Fazt Code - Rest Client | Extension de Visual Studio Code](https://www.youtube.com/watch?v=3QLcHjNp-08)

@@ -150,6 +150,16 @@ command.define {
   run = function()
     -- Obtenemos todas las páginas de la bóveda
     local allFiles = space.listFiles()
+    --[[
+    local files = space.collidingBasenames()
+    --print(files)
+
+    for i, file in ipairs(files) do
+      print("file - " .. i .. " - " .. file)
+    end
+    ]]
+    
+    
     local cleanPages = {}
 
     for _, file in ipairs(allFiles) do
@@ -171,11 +181,14 @@ command.define {
       local pageName = cleanPages[i]
       -- Quitamos la extensión .md para tener el nombre limpio de la nota
       local title = pageName:gsub("%.md$", "")
-
-      resultado = resultado .. "\n* [[" .. title .. "]]"
+      -- El guion bajo (_) ignora el texto modificado, solo nos quedamos con el conteo
+      local _, cont_Slash = string.gsub(pageName, "/", "")
+      -- Creamos el bloque de tabulaciones y lo concatenamos
+      local tabulaciones = string.rep("\t", cont_Slash)
+      resultado = resultado .. "\n" .. tabulaciones .. "* [[" .. title .. "]]"
       -- Leemos el contenido de la página
       local content = space.readPage(pageName)
-
+      
     end
     print(resultado)
 

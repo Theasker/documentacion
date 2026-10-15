@@ -27,6 +27,7 @@
 
 ul > li > div:hover {
   color: orange;
+  font-weight: bold;
 }
 
 .sb-page-widget-tree {
@@ -212,7 +213,7 @@ button{
 ## Hashtags
 #TOC
 
-```space-style___
+```space-style_
 .sb-hashtag, .hashtag{
   background-color: var(--main-bg-color);
   border-color: transparent;

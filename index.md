@@ -41,6 +41,6 @@ ${some(query[[
 ${query[[
   from p = index.contentPages()
   order by p.lastModified desc
-  limit 10
+  limit 100
   select templates.fullPageItem(p) 
 ]]}

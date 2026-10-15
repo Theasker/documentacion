@@ -49,3 +49,6 @@ PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; h
 
 ## fstab
  * **genfstab**: Detecta los puntos posibles de montaje y genera la salida para `/etc/fstab`
+
+## Windows
+* https://scoop.sh/ => Administrador de paquetes para windows. Sin necesidad de ser Administrador del sistema.

@@ -2,11 +2,14 @@
 
 Después de ejecutar el comando `tmux`, usamos las combinaciones de teclas para hacer diversas acciones:
 
+## División de ventanas
 * `Ctrl + b` y `%`: Divide verticalmente la terminal en 2 partes.
 * `Ctrl + b` y `"`: Divide horizontalmente la terminal en 2 partes.
 
 * `Ctrl + b` y `Ctrol + cursor derecha` o `Ctrol + cursor izquierda`: Con los cursores derecha e izquierda ajustamos el tamaño de las divisiones verticalmente.
 * `Ctrl + b` y `Ctrol + cursor arriba` o `Ctrol + cursor abajo`: Con los cursores arriba y abajo ajustamos el tamaño de las divisiones horizaontalmente.
+
+# Gestión de ventanas
 
 * `Ctrl-b c`: Crear nueva ventana (sesión)
 * `Ctrl-b &`: Eliminar ventana actual
@@ -23,6 +26,7 @@ Después de ejecutar el comando `tmux`, usamos las combinaciones de teclas para 
 * `Ctrl-b }`: Mover panel actual a la derecha
 * `Ctrl-b {`: Mover panel actual a la izquierda
 
+# Gestión de sesión
 
 * `Ctrl-b t`: Mostrar la hora
 * `Ctrl-b d`: Desatar de la sesión

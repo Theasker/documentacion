@@ -4,9 +4,9 @@
 
 # Closures (Cierres) en Go
 
-En Go, las funciones son valores de primera clase, lo que permite asignarlas a variables y declararlas de forma anónima dentro de otras funciones [1, 2]. 
+En Go, las funciones son valores de primera clase, lo que permite asignarlas a variables y declararlas de forma anónima dentro de otras funciones. 
 
-Un **closure** (o cierre) es una función anónima que "atrapa" y mantiene acceso a las variables declaradas en su ámbito o función contenedora exterior [2, 3].
+Un **closure** (o cierre) es una función anónima que "atrapa" y mantiene acceso a las variables declaradas en su ámbito o función contenedora exterior.
 
 ---
 
