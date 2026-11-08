@@ -23,12 +23,23 @@ Un **closure** (o cierre) es una función anónima que "atrapa" y mantiene acces
 Un closure conserva las referencias a las variables exteriores incluso después de que la función que lo creó haya finalizado su ejecución. Esto permite transportar el estado interno fuera de la función de origen.
 
 ```go
+package main
+
+import "fmt"
+
+func main() {
+	cont := CrearContador(0)
+	for x := 0; x < 5; x++ {
+		fmt.Println(cont())
+	}
+}
+
 func CrearContador(inicio int) func() int {
-    numero := inicio // Variable del entorno exterior
-    return func() int {
-        numero++ // El closure lee y modifica 'numero'
-        return numero
-    }
+	numero := inicio // Variable del entorno exterior
+	return func() int {
+		numero++ // El closure lee y modifica 'numero'
+		return numero
+	}
 }
 ```
 

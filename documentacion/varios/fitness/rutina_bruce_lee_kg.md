@@ -27,7 +27,7 @@ Esta rutina fue extraída del diario personal de Bruce Lee. El objetivo es la **
 1. **TIEMPO TOTAL:** 20 Minutos (Cronometrado).
 2. **DESCANSOS:** Máximo 10 segundos entre series.
 3. **FILOSOFÍA:** "Vacía tu mente". No pienses, solo muévete. El esfuerzo constante es una forma de meditación.
-4. **INTENSIÓN:** Cada repetición debe ser perfecta. Bruce priorizaba la velocidad explosiva y el control total.
+4. **INTENCIÓN:** Cada repetición debe ser perfecta. Bruce priorizaba la velocidad explosiva y el control total.
 
 > *"La disciplina no es un castigo, es autorespeto."* — Bruce Lee
 
