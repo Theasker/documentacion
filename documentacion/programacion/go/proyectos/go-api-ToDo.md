@@ -464,3 +464,266 @@ func main() {
 
 ## Próximo paso
 Bloque 5: Enrutamiento moderno con Go 1.22+ (métodos HTTP y parámetros en ruta) y serialización/deserialización de JSON (`encoding/json`).
+
+# Bloque 5: Enrutamiento Moderno y Manejo de JSON en Go
+
+## Objetivo
+Aprender a utilizar las capacidades de enrutamiento introducidas en Go 1.22+ (filtrado por método HTTP y captura de variables de ruta) y dominar la serialización (`Encode`) y deserialización (`Decode`) de datos JSON con `encoding/json`.
+
+## Conceptos clave
+- **Enrutamiento por Método (Go 1.22+):** Posibilidad de fijar el método HTTP en el patrón del `ServeMux` (ej. `"GET /tasks"`).
+- **Parámetros de Ruta (`PathValue`):** Extracción de segmentos variables definidos con llaves (ej. `"/tasks/{id}"` -> `r.PathValue("id")`).
+- **Struct Tags:** Metadatos asignados a los campos de un struct para definir su correspondencia en JSON (ej. `json:"title"`).
+- **Exportación de campos:** En Go, los campos que empiezan por minúscula son privados y el serializador JSON los ignora. Deben comenzar por mayúscula para ser procesados.
+- **`json.NewDecoder` vs `json.NewEncoder`:** Mecanismos de alto rendimiento basados en streams para leer del cuerpo de la petición (`r.Body`) y escribir hacia la respuesta (`w`) sin crear buffers intermedios pesados.
+- **`http.Error`:** Función auxiliar de conveniencia en `net/http` que emite un mensaje y un código de estado en una única instrucción.
+
+## Explicación
+
+### 1. Patrones de Ruta en `http.ServeMux`
+Desde Go 1.22, el enrutador estándar soporta sintaxis explícita:
+```go
+mux.HandleFunc("GET /task/{id}", handler.GetByID)
+mux.HandleFunc("POST /task", handler.Create)
+```
+
+Dentro del handler, el valor comodín se extrae como string:
+```go
+idStr := r.PathValue("id")
+id, err := strconv.Atoi(idStr)
+```
+
+### 2. Deserialización de JSON entrante (Request Body)
+Se lee directamente el stream `r.Body`:
+```go
+var input struct {
+    Title string `json:"title"`
+}
+
+// Es obligatorio pasar un puntero (&input) para que Decode mute la variable
+err := json.NewDecoder(r.Body).Decode(&input)
+if err != nil {
+    http.Error(w, "JSON inválido", http.StatusBadRequest)
+    return
+}
+```
+
+### 3. Serialización de JSON saliente (Response Body)
+Se escribe directamente hacia `w`:
+```go
+w.Header().Set("Content-Type", "application/json")
+w.WriteHeader(http.StatusCreated) // Si es distinto de 200 OK
+json.NewEncoder(w).Encode(datos)
+```
+
+## Ejemplos
+
+### Handler desacoplado con Inyección de Dependencias
+```go
+type TaskHandler struct {
+    repo TaskRepository
+}
+
+func (h *TaskHandler) GetByID(w http.ResponseWriter, r *http.Request) {
+    idStr := r.PathValue("id")
+    id, err := strconv.Atoi(idStr)
+    if err != nil {
+        http.Error(w, "el ID debe ser numérico", http.StatusBadRequest)
+        return
+    }
+
+    task, err := h.repo.GetByID(id)
+    if err != nil {
+        http.Error(w, err.Error(), http.StatusNotFound)
+        return
+    }
+
+    w.Header().Set("Content-Type", "application/json")
+    json.NewEncoder(w).Encode(task)
+}
+```
+
+## Errores frecuentes
+1. **Olvidar los `return` tras `http.Error`:** La función no se detiene sola. Omitir el `return` provocará que el handler continúe procesando la petición y choque con escrituras redundantes (`superfluous response.WriteHeader call`).
+2. **Campos con inicial minúscula en structs para JSON:**
+   ```go
+   type Tarea struct {
+       title string `json:"title"` // INVISIBLE para encoding/json
+       Title string `json:"title"` // CORRECTO: público y visible
+   }
+   ```
+3. **No pasar un puntero a `Decode`:**
+   `json.NewDecoder(r.Body).Decode(input)` en vez de `Decode(&input)` provocará un error en tiempo de ejecución, ya que Go no puede mutar una copia.
+4. **Confundir alias de PowerShell con curl:** En PowerShell en Windows, `curl` es un alias de `Invoke-WebRequest`. Se debe usar `curl.exe` explícitamente o escapar las comillas de la carga JSON.
+
+## Buenas prácticas
+- Utilizar `http.Error` para devolver mensajes de error simples de manera rápida y sin boilerplate.
+- Separar la estructura de datos que recibe la petición (`input struct`) del modelo de dominio interno (`Task`) para evitar exponer campos internos que el cliente no debe manipular (ej. ID autogenerados, timestamps de auditoría).
+- Devolver siempre el código HTTP semántico apropiado: `201 Created` en altas exitosas, `400 Bad Request` ante datos mal formados, `404 Not Found` cuando el recurso no existe y `500 Internal Server Error` ante fallos de persistencia.
+
+## Glosario
+- **Marshalling / Encoding:** Proceso de transformar estructuras de datos nativas del lenguaje en representaciones estándar como JSON.
+- **Unmarshalling / Decoding:** Proceso inverso de reconstruir estructuras de datos nativas a partir de un flujo de bytes JSON.
+- **Inyección de Dependencias:** Técnica donde las dependencias requeridas por un objeto (ej. el repositorio) se suministran desde el exterior en su instanciación en lugar de ser creadas internamente.
+
+## Referencias oficiales
+- [Go 1.22 Release Notes: Enhanced Routing Patterns](https://go.dev/doc/go1.22#enhanced_routing_patterns)
+- [Package encoding/json Documentation](https://pkg.go.dev/encoding/json)
+
+## Preguntas de repaso
+1. ¿Por qué es obligatorio que los campos de un `struct` que deseamos convertir a JSON comiencen con letra mayúscula?
+2. ¿Qué diferencia práctica existe entre `json.Marshal(dato)` y `json.NewEncoder(w).Encode(dato)` en un handler HTTP?
+3. ¿Por qué `json.NewDecoder(r.Body).Decode(...)` requiere recibir un puntero a la variable donde guardará los datos?
+
+## Ejercicios propuestos
+1. Agrega al struct `Task` una etiqueta para que el campo `Done` se serialice como `completada` en el JSON.
+2. Agrega una validación en `CreateTask` que compruebe que el título tenga una longitud mínima de 3 caracteres. Si no la cumple, devuelve un `400 Bad Request`.
+3. Implementa una ruta `"GET /tasks"` que devuelva la lista completa de todas las tareas existentes en formato de array JSON (`[]*Task`).
+
+## Checklist de comprensión
+- [ ] Conozco la sintaxis `"METODO /ruta/{param}"` de Go 1.22+.
+- [ ] Sé extraer parámetros con `r.PathValue(...)`.
+- [ ] Entiendo el propósito de las struct tags `json:"nombre"`.
+- [ ] Uso `json.NewDecoder` para leer bodies y `json.NewEncoder` para responder en JSON.
+- [ ] Siempre coloco `return` inmediatamente después de un `http.Error`.
+
+## Resumen
+Go 1.22+ incluye enrutamiento REST potente directamente en la librería estándar sin librerías externas. La combinación de `PathValue`, `encoding/json` y structs con inyección de dependencias permite estructurar handlers robustos y desacoplados.
+
+## Próximo paso
+Bloque 6: Persistencia real con SQLite y `database/sql` (conexiones, migraciones de esquema manuales, transacciones y consultas nativas parametrizadas).
+
+# Bloque 6: Persistencia con SQLite y `database/sql`
+
+## Objetivo
+Dominar el acceso a bases de datos relacionales en Go mediante la librería estándar `database/sql`, comprender el rol de los drivers externos, la gestión segura de conexiones y la implementación del patrón repositorio sobre SQLite nativo.
+
+## Conceptos clave
+- **`database/sql`:** Paquete estándar de Go que provee una interfaz genérica y un pool de conexiones para bases de datos SQL.
+- **Side-effect import (`_ "driver"`):** Mecanismo de importación anónima para registrar el driver en el subsistema de Go sin exponer símbolos directos en el código.
+- **`sql.Open` vs `db.Ping`:** `sql.Open` solo valida el formato del string de conexión; `db.Ping()` es obligatorio para comprobar la comunicación real con el almacenamiento físico.
+- **`sql.ErrNoRows`:** Centinela estándar retornado por `row.Scan()` cuando una consulta `QueryRow` no encuentra coincidencias.
+- **Parametrización segura (`?`):** Sustitución de variables mediante marcadores de posición (*placeholders*) gestionados por el driver para inmunizar la aplicación contra inyecciones SQL.
+
+## Explicación
+
+### 1. Métodos de ejecución en `database/sql`
+- **`db.Exec(query, args...)`:** Para sentencias DDL y DML sin conjunto de resultados (`INSERT`, `UPDATE`, `DELETE`, `CREATE`). Devuelve un `sql.Result`.
+- **`db.QueryRow(query, args...)`:** Para consultas que retornan exactamente 0 o 1 fila. Se procesa llamando directamente a `.Scan(...)`.
+- **`db.Query(query, args...)`:** Para consultas que retornan conjuntos arbitrarios de filas (se recorre con `for rows.Next()`).
+
+### 2. Ciclo de vida y liberación de recursos
+Las conexiones de base de datos representan descriptores de archivo y sockets de red. Deben cerrarse mediante `defer db.Close()` inmediatamente después de validar que no hubo error al abrirse.
+
+## Ejemplos
+
+### Conexión e inicialización de esquema
+```go
+func setupDatabase() (*sql.DB, error) {
+    db, err := sql.Open("sqlite", "todo.db")
+    if err != nil {
+        return nil, err
+    }
+
+    if err := db.Ping(); err != nil {
+        return nil, err
+    }
+
+    schema := `
+    CREATE TABLE IF NOT EXISTS tasks (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        title TEXT NOT NULL,
+        done BOOLEAN NOT NULL DEFAULT 0
+    );`
+    if _, err := db.Exec(schema); err != nil {
+        return nil, err
+    }
+
+    return db, nil
+}
+```
+
+### Inserción y captura de ID autoincremental
+```go
+func (r *SQLiteTaskRepository) Save(task *Task) error {
+    query := `INSERT INTO tasks (title, done) VALUES (?, ?)`
+    result, err := r.db.Exec(query, task.Title, task.Done)
+    if err != nil {
+        return err
+    }
+
+    id, err := result.LastInsertId()
+    if err != nil {
+        return err
+    }
+
+    task.ID = int(id)
+    return nil
+}
+```
+
+### Búsqueda unitaria y control de `sql.ErrNoRows`
+```go
+func (r *SQLiteTaskRepository) GetByID(id int) (*Task, error) {
+    var task Task
+    query := `SELECT id, title, done FROM tasks WHERE id = ?`
+    err := r.db.QueryRow(query, id).Scan(&task.ID, &task.Title, &task.Done)
+    if err == sql.ErrNoRows {
+        return nil, fmt.Errorf("tarea con id %d no encontrada", id)
+    }
+    if err != nil {
+        return nil, err
+    }
+    return &task, nil
+}
+```
+
+## Errores frecuentes
+1. **Asumir que `sql.Open` comprueba la conexión:** Si el archivo no tiene permisos o la ruta es inválida, `sql.Open` no fallará. Omitir `db.Ping()` oculta fallos hasta que se lanza la primera consulta.
+2. **Invertir la comprobación de `sql.ErrNoRows`:** Usar `if err != sql.ErrNoRows` provoca que las consultas exitosas (`err == nil`) se interpreten erróneamente como fallos.
+3. **Concatenar cadenas en consultas SQL:**
+   ```go
+   // VULNERABLE A SQL INJECTION:
+   query := fmt.Sprintf("SELECT * FROM tasks WHERE id = %s", id)
+   // SEGURO:
+   query := "SELECT * FROM tasks WHERE id = ?"
+   ```
+4. **Calcular IDs en memoria cuando la BD usa autoincrementales:** Ocurre al calcular `len(slice) + 1` en lugar de confiar en `AUTOINCREMENT` y `LastInsertId()`.
+
+## Buenas prácticas
+- Definir explícitamente las columnas en los `SELECT` (`SELECT id, title, done`) en vez de usar comodines (`SELECT *`), garantizando correspondencia estricta con los argumentos pasados a `.Scan()`.
+- Utilizar librerías SQLite en Go puro (`modernc.org/sqlite`) para evitar cadenas de herramientas cruzadas dependientes de CGO/GCC en despliegues entre Windows y Linux.
+- Inyectar siempre `*sql.DB` o la interfaz del repositorio a través de constructores, evitando variables globales que dificulten las pruebas unitarias.
+
+## Glosario
+- **Driver:** Biblioteca de bajo nivel que traduce las llamadas canónicas de `database/sql` al protocolo específico de un motor de datos.
+- **Connection Pool:** Conjunto de conexiones a la base de datos preabiertas y reutilizables administradas internamente por `*sql.DB`.
+- **Prepared Statement:** Sentencia SQL precompilada en el motor para mejorar rendimiento y neutralizar riesgos de inyección de código.
+- **Side-effect Import:** Importación de paquete precedida de `_` que ejecuta únicamente la función `init()` interna del paquete sin exponer identificadores.
+
+## Referencias oficiales
+- [Go database/sql Tutorial](https://go.dev/doc/database/)
+- [Package database/sql Documentation](https://pkg.go.dev/database/sql)
+
+## Preguntas de repaso
+1. ¿Qué función cumple el guion bajo en `import _ "modernc.org/sqlite"`?
+2. ¿Por qué una sentencia `INSERT` se ejecuta con `db.Exec` en lugar de `db.Query`?
+3. ¿Cómo distingue tu aplicación entre una consulta que falló por problemas de conexión y una consulta que simplemente no encontró datos?
+
+## Ejercicios propuestos
+1. Abre el archivo `todo.db` utilizando una herramienta de línea de comandos (`sqlite3 todo.db`) o visor GUI (como DB Browser for SQLite) para verificar los registros insertados.
+2. Añade al struct `Task` y a la tabla de SQLite una columna `created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP`.
+3. Modifica `SQLiteTaskRepository.GetByID` para que también lea el campo `created_at` usando una variable auxiliar de tipo `time.Time` o `string`.
+
+## Checklist de comprensión
+- [ ] Entiendo la diferencia entre `db.Exec`, `db.QueryRow` y `db.Query`.
+- [ ] Compruebo la conectividad física con `db.Ping()`.
+- [ ] Sé cómo capturar el último ID generado mediante `result.LastInsertId()`.
+- [ ] Controlo el centinela `sql.ErrNoRows` para responder con un 404 limpio.
+- [ ] Utilizo siempre marcadores `?` para prevenir SQL Injection.
+
+## Resumen
+`database/sql` provee un mecanismo unificado y concurrente para persistencia relacional. Implementar el acceso a SQLite mediante la interfaz `TaskRepository` permite que los controladores web desconozcan por completo los detalles de almacenamiento.
+
+## Próximo paso
+Bloque 7: Completar el CRUD completo (Listar todas las tareas con `db.Query`, Actualizar estado y Borrar tarea) y Validaciones de negocio robustas.
